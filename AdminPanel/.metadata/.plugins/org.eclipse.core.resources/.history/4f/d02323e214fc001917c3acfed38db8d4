@@ -1,0 +1,13 @@
+package com.nagarro.adminPanel.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class FilterUsersDaoImpl implements FilterUsersDao {
+
+	@Override
+	public void filterList(String filterName, String filterContact, String filterEMail) {
+
+	}
+
+}

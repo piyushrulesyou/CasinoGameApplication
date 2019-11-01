@@ -1,0 +1,38 @@
+package com.nagarro.adminPanel.dao;
+
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.nagarro.adminPanel.model.CustomerDetails;
+
+@Repository
+public class UserListDaoImpl extends AbstractDAO<String, CustomerDetails> implements UserListDao {
+
+	@Transactional
+	public List<CustomerDetails> fetchAllUsers() {
+
+		CriteriaBuilder criteriaBuilder = getSession().getCriteriaBuilder();
+
+		CriteriaQuery<CustomerDetails> criteriaQuery = criteriaBuilder.createQuery(CustomerDetails.class);
+
+		Root<CustomerDetails> from = criteriaQuery.from(CustomerDetails.class);
+
+		CriteriaQuery<CustomerDetails> select = criteriaQuery.select(from);
+
+		TypedQuery<CustomerDetails> typedQuery = getSession().createQuery(select);
+
+		List<CustomerDetails> listOfAllUsers = null;
+
+		listOfAllUsers = typedQuery.getResultList();
+
+		return listOfAllUsers;
+
+	}
+}

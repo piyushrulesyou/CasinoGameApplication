@@ -1,0 +1,11 @@
+package com.nagarro.adminPanel.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class UserListController {
+
+	
+	
+	
+}

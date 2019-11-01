@@ -1,0 +1,24 @@
+package com.nagarro.adminPanel.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nagarro.adminPanel.dao.FilterUsersDao;
+import com.nagarro.adminPanel.model.CustomerDetails;
+
+@Service
+public class FilterUsersServicesImpl implements FilterUsersServices {
+
+	
+	@Autowired
+	FilterUsersDao filterUsersDao;
+
+	@Override
+	public void filterUsersList(String filterName, String filterContact, String filterEMail) {
+
+		List<CustomerDetails> sol = filterUsersDao.filterList(filterName, filterContact, filterEMail);
+		
+	}
+}

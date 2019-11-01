@@ -1,0 +1,12 @@
+package com.nagarro.adminPanel.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserListServicesImpl {
+
+	@Autowired
+	UserListDao userListDao;
+	
+}

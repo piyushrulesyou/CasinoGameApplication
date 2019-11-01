@@ -1,0 +1,7 @@
+package com.nagarro.adminPanel.services;
+
+public interface FilterUsersServices {
+
+	void filterUsersList(String filterName, String filterContact, String filterEMail);
+
+}

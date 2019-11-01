@@ -1,0 +1,46 @@
+package com.nagarro.adminPanel.dao;
+
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.apache.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Repository;
+
+import com.nagarro.adminPanel.model.CustomerDetails;
+
+@Repository
+public class UserListDaoImpl implements UserListDao {
+
+	public List<CustomerDetails> fetchAllUsers() {
+
+Session session = sessionFactory.openSession();
+		
+		CriteriaBuilder criteriaBuider = session.getCriteriaBuilder();
+		CriteriaQuery<CustomerDetails> criteriaQuery = criteriaBuider.createQuery(CustomerDetails.class);
+		Root<CustomerDetails> root = criteriaQuery.from(CustomerDetails.class);
+		
+		criteriaQuery.select(root);
+		Query<CustomerDetails> query = session.createQuery(criteriaQuery);
+		List<CustomerDetails> employees = query.getResultList();
+		
+		session.close();
+
+		return employees;
+		
+	}
+}

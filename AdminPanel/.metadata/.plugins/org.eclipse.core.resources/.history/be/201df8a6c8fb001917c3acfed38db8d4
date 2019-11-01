@@ -1,0 +1,20 @@
+package com.nagarro.adminPanel.utilities;
+
+public class GenerateRandomID {
+
+	public static String generateID(String emailID, String contactNumber, String customerName) {
+
+		String firstPart = emailID.substring(0, 3);
+
+		int randOne = Math.random()*10;
+		
+		String secondPart = contactNumber.substring(0, 3);
+
+		String thirdPart = customerName.substring(0, 3);
+
+		String finalID = firstPart + secondPart + thirdPart;
+
+		return finalID;
+	}
+
+}

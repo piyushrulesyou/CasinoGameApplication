@@ -1,0 +1,24 @@
+package com.nagarro.adminPanel.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.nagarro.adminPanel.model.CustomerDetails;
+
+@Repository
+public class UserListDaoImpl implements UserListDao {
+
+	@Autowired
+	SessionDao sessionDao;
+
+	@Override
+	public List<CustomerDetails> fetchAllUsers() {
+		List<CustomerDetails> listOfAllUsers = new ArrayList<>();
+
+		return listOfAllUsers;
+
+	}
+}

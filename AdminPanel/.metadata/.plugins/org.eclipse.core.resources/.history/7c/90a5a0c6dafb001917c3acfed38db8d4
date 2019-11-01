@@ -1,0 +1,22 @@
+package com.nagarro.adminPanel.utilities;
+
+import java.time.LocalDate;
+import java.time.Period;
+
+public class AgeCalculator {
+
+	public static boolean isValidAge(String customerDOB) {
+
+		LocalDate customerAge = DateParser.getDate(customerDOB);
+		
+		LocalDate todayDate = LocalDate.now();
+		
+		Period agePeriod = Period.between(customerAge, todayDate);
+		
+		int customerAge = agePeriod.getYears();
+		
+		return true;
+
+	}
+
+}

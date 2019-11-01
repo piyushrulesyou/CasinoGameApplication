@@ -1,0 +1,17 @@
+package com.nagarro.adminPanel.utilities;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class DateParser {
+//	final static Logger LOG = Logger.getLogger(DateParser.class);
+
+	private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+	public static LocalDate getDate(String stringDate) {
+
+		LocalDate date = null;
+		date = LocalDate.parse(stringDate, formatter);
+		return date;
+	}
+}

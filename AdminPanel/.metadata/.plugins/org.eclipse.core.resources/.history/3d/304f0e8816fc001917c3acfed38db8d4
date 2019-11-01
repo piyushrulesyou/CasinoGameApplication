@@ -1,0 +1,7 @@
+package com.nagarro.adminPanel.dao;
+
+public interface FilterUsersDao {
+
+	public void filterList(String filterName, String filterContact, String filterEMail);
+
+}

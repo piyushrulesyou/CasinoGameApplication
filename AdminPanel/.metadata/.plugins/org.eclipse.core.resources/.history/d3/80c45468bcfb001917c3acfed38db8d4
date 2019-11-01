@@ -1,0 +1,39 @@
+//package com.nagarro.adminPanel.utilities;
+//
+//import java.util.Collections;
+//import java.util.Comparator;
+//import java.util.List;
+//
+//import org.springframework.stereotype.Component;
+//
+//import com.nagarro.adminPanel.model.FlightDetails;
+//
+//@Component
+//public class FlightSorting {
+//
+//	public List<FlightDetails> sortFlightsAccToUser(List<FlightDetails> finalFlightDetails, String outputPreference) {
+//
+//		Comparator<FlightDetails> comparator = null;
+//		switch (outputPreference.charAt(3)) {
+//		case 'F':
+//			comparator = (flight1, flight2) -> Double.compare(flight1.getFlightFare(), flight2.getFlightFare());
+//			break;
+//
+//		case 'B':
+//
+//			comparator = (flight1, flight2) -> {
+//				int sortLevel1 = Double.compare(flight1.getFlightFare(), flight2.getFlightFare());
+//				if (sortLevel1 == 0) {
+//					return Double.compare(flight1.getFlightDuration(), flight2.getFlightDuration());
+//				}
+//				return sortLevel1;
+//			};
+//			break;
+//
+//		}
+//		Collections.sort(finalFlightDetails, comparator);
+//
+//		return finalFlightDetails;
+//	}
+//
+//}

@@ -1,0 +1,29 @@
+package com.nagarro.adminPanel.dao;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class FilterUsersDaoImpl implements FilterUsersDao {
+
+	private Configuration con;
+	private SessionFactory sessionFactory;
+
+	public FilterUsersDaoImpl() {
+		con = new Configuration().configure();
+		sessionFactory = con.buildSessionFactory();
+	}
+
+	
+	
+	
+	public void filterList(String filterName, String filterContact, String filterEMail) {
+
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.nagarro.adminPanel.utilities;
+
+import java.time.Year;
+import java.util.Date;
+
+public class AgeCalculator {
+
+	public static boolean isValidAge(String customerDOB) {
+
+		Date customerAge = DateParser.getDate(customerDOB);
+		Date todayDate = new Date();
+		
+		return true;
+		
+	}
+
+}
