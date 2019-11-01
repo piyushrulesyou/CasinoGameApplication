@@ -48,7 +48,7 @@
 		<!-- Links -->
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-			<li class="nav-item"><a class="nav-link active" href="">Register</a></li>
+			<li class="nav-item"><a class="nav-link active" href="register">Register</a></li>
 			<li class="nav-item"><a class="nav-link" href="showUsers">User
 					List</a></li>
 		</ul>

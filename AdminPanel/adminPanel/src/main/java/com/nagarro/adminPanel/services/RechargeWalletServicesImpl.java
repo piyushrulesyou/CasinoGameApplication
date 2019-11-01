@@ -11,7 +11,7 @@ public class RechargeWalletServicesImpl implements RechargeWalletServices {
 	@Autowired
 	RechargeWalletDao rechargeWalletDao;
 
-	public void rechargeWallet(String customerID, int rechargeAmount) {
+	public void rechargeWallet(String customerID, double rechargeAmount) {
 		rechargeWalletDao.rechargeInDB(customerID, rechargeAmount);
 	}
 
