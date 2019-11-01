@@ -20,20 +20,19 @@ public class UserListController {
 
 	@Autowired
 	UserListServices userListServices;
-	
-	@RequestMapping(value = "showUsers", method=RequestMethod.GET)
+
+	@RequestMapping(value = "showUsers", method = RequestMethod.GET)
 	public ModelAndView showUserList(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		List<CustomerDetails> listOfUsers = new ArrayList<CustomerDetails>();
-		
+
 		ModelAndView modelAndView = null;
-		
+
 		listOfUsers = userListServices.fetchAllUsers();
 
 		modelAndView = new ModelAndView("UsersList");
 		modelAndView.addObject("listOfUsers", listOfUsers);
-		
+
 		return modelAndView;
 	}
-	
 }
