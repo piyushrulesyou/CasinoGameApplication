@@ -85,43 +85,58 @@
 					<td>${eachUser.contactNumber}</td>
 					<td>${eachUser.emailID}</td>
 					<td>${eachUser.accountBalance}</td>
-					<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalID">
-  								Recharge
-						</button></td>
-
-					<!-- 				<td><a -->
-					<%-- 					href="edit?employeeCode=${item.employeeCode}&hrName=${hrName}"><button --%>
-					<!-- 							class="buttonEdit">Edit</button></a> <a -->
-					<%-- 					href="delete?employeeName=${item.employeeName}&employeeCode=${item.employeeCode}&hrName=${hrName}"><button --%>
-					<!-- 							class="buttonDelete">Delete</button></a></td> -->
-
+					<td><button id="${eachUser.customerID}-${eachUser.customerName}" type="button"
+							class="btn btn-primary rechargeAmountButton" data-toggle="modal"
+							data-target="#modalID">Recharge</button></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</c:if>
 
 
-	<!-- Modal -->
-<div class="modal fade" id="modalID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalID" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+				<form action="rechargeWallet">
+				
+					Name: <input type="text" id="customerName" name="customerName" value="" disabled="disabled">
+					<input type="text" id="rechargeID" name="rechargeID" value="" hidden="hidden">
+					<br><br>
+					Amount (in Rs.)<input type="number" id="rechargeAmount" name="rechargeAmount" value=""> 
+				
+				</form>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(".rechargeAmountButton").click(function() {
+			var id = $(this).attr("id").split("-")[0]
+			var name = $(this).attr("id").split("-")[1]
+			$("#rechargeID").val(id);
+			$("#customerName").val(name);
+		})
+	</script>
 
 
 </body>
