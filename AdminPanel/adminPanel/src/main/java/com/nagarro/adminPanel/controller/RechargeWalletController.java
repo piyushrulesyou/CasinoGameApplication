@@ -17,6 +17,9 @@ public class RechargeWalletController {
 	@Autowired
 	RechargeWalletServices rechargeWalletServices;
 
+	@Autowired
+	UserListController userListController;
+
 	@RequestMapping(value = "rechargeWallet", method = RequestMethod.POST)
 	public ModelAndView rechargeUserWallet(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -25,10 +28,10 @@ public class RechargeWalletController {
 
 		rechargeWalletServices.rechargeWallet(customerID, rechargeAmount);
 
-		ModelAndView modelAndView = new ModelAndView("showUsers");
+		ModelAndView modelAndView = null;
+
+		modelAndView = userListController.showUserList(request, response);
 
 		return modelAndView;
-
 	}
-
 }
