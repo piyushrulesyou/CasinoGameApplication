@@ -22,10 +22,12 @@ public class UserRegistrationController {
 	UserRegistrationServices userRegistrationServices;
 
 	@RequestMapping(value = "register", method = RequestMethod.GET)
-	public ModelAndView showRegisterPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView showRegisterPage(HttpServletRequest request, HttpServletResponse response, String errorMessage)
+			throws Exception {
 
 		ModelAndView modelAndView = new ModelAndView("RegisterUser");
 		modelAndView.addObject("command", new CustomerDetails());
+		modelAndView.addObject("statusMessage", errorMessage);
 		return modelAndView;
 	}
 
@@ -44,9 +46,13 @@ public class UserRegistrationController {
 
 		if (!is18Above) {
 			String errorMessage = "Please provide a valid input and try again!";
-			modelAndView = new ModelAndView("RegisterUser");
-			modelAndView.addObject("statusMessage", errorMessage);
+//			modelAndView = new ModelAndView("RegisterUser");
+//			modelAndView.addObject("statusMessage", errorMessage);
+//			return modelAndView;
+
+			modelAndView =  showRegisterPage(request, response, errorMessage);
 			return modelAndView;
+
 		}
 
 		String customerID = GenerateRandomID.generateID(emailID, contactNumber, customerName);
