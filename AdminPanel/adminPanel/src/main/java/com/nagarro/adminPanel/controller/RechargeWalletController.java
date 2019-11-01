@@ -24,7 +24,7 @@ public class RechargeWalletController {
 	public ModelAndView rechargeUserWallet(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String customerID = request.getParameter("rechargeID");
-		int rechargeAmount = Integer.parseInt(request.getParameter("rechargeAmount"));
+		double rechargeAmount = Double.parseDouble(request.getParameter("rechargeAmount"));
 
 		rechargeWalletServices.rechargeWallet(customerID, rechargeAmount);
 
