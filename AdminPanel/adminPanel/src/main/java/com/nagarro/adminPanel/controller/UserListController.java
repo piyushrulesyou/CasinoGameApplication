@@ -30,8 +30,11 @@ public class UserListController {
 
 		listOfUsers = userListServices.fetchAllUsers();
 
+		int userCounter = 0;
+
 		modelAndView = new ModelAndView("UsersList");
 		modelAndView.addObject("listOfUsers", listOfUsers);
+		modelAndView.addObject("userCounter", userCounter);
 
 		return modelAndView;
 	}
