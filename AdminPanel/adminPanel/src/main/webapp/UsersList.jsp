@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
@@ -11,7 +12,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<link rel="stylesheet" href="<c:url value="/resources/css/UserList.css" />" >
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script
@@ -92,11 +93,10 @@
 
 					<td><button
 							id="${eachUser.customerID}-${eachUser.customerName}"
-							type="button"
-							style="color: transparent; background-color: transparent; border-color: transparent;"
-							data-toggle="modal" data-target="#modalID"
+							type="button" data-toggle="modal" data-target="#modalID"
 							class="rechargeAmountButton">
-							<img src="https://img.icons8.com/wired/50/000000/plus.png">
+<!-- 							<img src="https://img.icons8.com/wired/50/000000/plus.png"> -->
+							<img alt="plusDatabaseIcon" src="<c:url value="resources/Images/add.png" />">
 						</button></td>
 
 				</tr>
@@ -123,13 +123,12 @@
 				<form action="rechargeWallet" method="post">
 					<div class="modal-body">
 
-						Name: <input type="text" id="customerName" name="customerName"
-							value="" disabled="disabled"
-							style="background-color: transparent; border-color: transparent; font-size: 20px; font-weight: bold;">
-						<input type="text" id="rechargeID" name="rechargeID" value=""
-							hidden="hidden"> <br> <br> Amount (in Rs.)<input
-							type="number" min="0" step=".01" id="rechargeAmount"
-							name="rechargeAmount" value=""> <br>
+						Name: <input type="text" class="customerNameReadOnly"
+							id="customerName" name="customerName" value=""
+							disabled="disabled"> <input type="text" id="rechargeID"
+							name="rechargeID" value="" hidden="hidden"> <br> <br>
+						Amount (in Rs.)<input type="number" min="0" step=".01"
+							id="rechargeAmount" name="rechargeAmount" value=""> <br>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"

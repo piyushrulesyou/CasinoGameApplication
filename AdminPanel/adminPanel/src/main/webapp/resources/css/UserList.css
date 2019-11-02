@@ -1,0 +1,13 @@
+.rechargeAmountButton {
+	color: transparent;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+
+.customerNameReadOnly {
+	background-color: transparent;
+	border-color: transparent;
+	font-size: 18px;
+	font-weight: bold;
+}
