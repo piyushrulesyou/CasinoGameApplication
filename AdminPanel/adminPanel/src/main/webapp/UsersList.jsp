@@ -12,37 +12,26 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="<c:url value="/resources/css/UserList.css" />" >
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/UserList.css" />">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<!-- 	<nav class="navbar navbar-expand-sm navbar-light bg-faded"> -->
-		<a class="navbar-brand" href="index.jsp"> <img
-			src="https://www.slotnite.com/images/sliders/livecasino/casino1.png"
-			alt="logo" style="width: 40px;">
-		</a>
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-			<li class="nav-item"><a class="nav-link" href="register">Register</a></li>
-			<li class="nav-item"><a class="nav-link active" href="showUsers">User
-					List</a></li>
-		</ul>
-		<ul class="navbar-nav">
-			<li class="nav-item"><span class="nav-link disabled">Welcome
-					to Casino Admin App!</span></li>
-		</ul>
-	</nav>
+	<jsp:include page="WEB-INF/NavigationBar.jsp"></jsp:include>
 
 	Total ${listOfUsers.size()} users found!!
 
@@ -95,8 +84,8 @@
 							id="${eachUser.customerID}-${eachUser.customerName}"
 							type="button" data-toggle="modal" data-target="#modalID"
 							class="rechargeAmountButton">
-<!-- 							<img src="https://img.icons8.com/wired/50/000000/plus.png"> -->
-							<img alt="plusDatabaseIcon" src="<c:url value="resources/Images/add.png" />">
+							<img class="plusLogo" alt="plusDatabaseIcon"
+								src="<c:url value="resources/Images/add.png" />">
 						</button></td>
 
 				</tr>
@@ -142,15 +131,7 @@
 		</div>
 	</div>
 
-	<script>
-		$(".rechargeAmountButton").click(function() {
-			var id = $(this).attr("id").split("-")[0]
-			var name = $(this).attr("id").split("-")[1]
-			$("#rechargeID").val(id);
-			$("#customerName").val(name);
-		})
-	</script>
-
+<script type="text/javascript" src="resources/js/UserList.js"></script>
 
 </body>
 </html>

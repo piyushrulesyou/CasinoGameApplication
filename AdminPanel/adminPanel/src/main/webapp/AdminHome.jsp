@@ -1,5 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,25 +24,17 @@
 <body>
 	<!-- 	background="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/collection-of-las-vegas-casino-chips-1-aloha-art.jpg"> -->
 
-	<!-- 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> -->
-	<nav class="navbar navbar-expand-sm navbar-light bg-faded">
-		<a class="navbar-brand" href="#"> <img
-			src="https://www.slotnite.com/images/sliders/livecasino/casino1.png"
-			alt="logo" style="width: 40px;">
-		</a>
 
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="RegisterUser.jsp">Register</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">User List</a></li>
-		</ul>
-		<ul class="navbar-nav">
-			<li class="nav-item"><span class="nav-link disabled">Welcome
-					to Casion Admin App!</span></li>
-		</ul>
-	</nav>
+	<c:if test="${successMessage != null}">
+		<div class="alert alert-success">
+			<strong>Success!</strong> Customer with ID ${successMessage}
+			Registered Successfully!!
+		</div>
+	</c:if>
+
+
+
+	<jsp:include page="WEB-INF/NavigationBar.jsp"></jsp:include>
 
 
 
