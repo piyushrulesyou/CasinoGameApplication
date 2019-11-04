@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 
+import com.nagarro.adminPanel.dto.LoginServicesDTO;
 import com.nagarro.adminPanel.model.CustomerDetails;
 
 @Repository
@@ -13,20 +14,31 @@ public class ValidateUserDaoImpl implements ValidateUserDao {
 	private Configuration con;
 	private SessionFactory sessionFactory;
 
+	LoginServicesDTO customerLoginInformation = new LoginServicesDTO();
+
 	public ValidateUserDaoImpl() {
 		con = new Configuration().configure();
 		sessionFactory = con.buildSessionFactory();
 	}
 
 	@Override
-	public CustomerDetails validateUser(String customerID) {
+	public LoginServicesDTO validateUser(String customerID) {
+		try {
 
-		Session session = sessionFactory.openSession();
+			Session session = sessionFactory.openSession();
 
-		CustomerDetails userInformation = session.get(CustomerDetails.class, customerID);
+			CustomerDetails userInformation = session.get(CustomerDetails.class, customerID);
 
-		session.close();
+			session.close();
 
-		return userInformation;
+			customerLoginInformation.setCustomerName(userInformation.getCustomerName());
+			customerLoginInformation.setAccountBalance(userInformation.getAccountBalance());
+
+			return customerLoginInformation;
+
+		} catch (NullPointerException exception) {
+			return null;
+		}
+
 	}
 }

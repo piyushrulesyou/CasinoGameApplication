@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nagarro.adminPanel.dao.ValidateUserDao;
-import com.nagarro.adminPanel.model.CustomerDetails;
+import com.nagarro.adminPanel.dto.LoginServicesDTO;
+import com.nagarro.adminPanel.services.ValidateUserServices;
 
 @RestController
 public class ValidateUserController {
 
 	@Autowired
-	ValidateUserDao validateUserDao;
+	ValidateUserServices validateUserServices;
 
 	@GetMapping("/customerdetails/{customerID}")
-	public CustomerDetails getCustomerDetails(@PathVariable String customerID) {
-		CustomerDetails detailsOfCustomer = validateUserDao.validateUser(customerID);
+	public LoginServicesDTO getCustomerDetails(@PathVariable String customerID) {
+		LoginServicesDTO detailsOfCustomer = validateUserServices.validateUser(customerID);
 		return detailsOfCustomer;
 	}
 }
