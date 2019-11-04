@@ -17,9 +17,9 @@ public class BlockAmountController {
 	@GetMapping("/blockPlayAmount/{customerID}/{blockAmount}")
 	public BlockAmountDTO validateAndBlockAmount(@PathVariable String customerID, @PathVariable double blockAmount) {
 		
-		BlockAmountDTO eligibleCustomer = blockAmountServices.validateUserAndBlockAmount(customerID, blockAmount);
+		BlockAmountDTO isEligibleCustomer = blockAmountServices.validateUserAndBlockAmount(customerID, blockAmount);
 		
-		return eligibleCustomer;
+		return isEligibleCustomer;
 	}
 
 }

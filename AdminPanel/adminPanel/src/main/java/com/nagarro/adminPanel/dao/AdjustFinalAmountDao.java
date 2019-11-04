@@ -2,7 +2,7 @@
 //
 //import com.nagarro.adminPanel.model.CustomerDetails;
 //
-//public interface BlockAmountDao {
+//public interface AdjustFinalAmountDao {
 //
 //	public CustomerDetails fetchCustomerDetails(String customerID);
 //

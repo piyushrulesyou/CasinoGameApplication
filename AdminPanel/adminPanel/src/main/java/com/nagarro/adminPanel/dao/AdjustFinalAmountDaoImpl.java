@@ -8,12 +8,12 @@
 //import com.nagarro.adminPanel.model.CustomerDetails;
 //
 //@Repository
-//public class BlockAmountDaoImpl implements BlockAmountDao {
+//public class AdjustFinalAmountDaoImpl implements AdjustFinalAmountDao {
 //
 //	private Configuration con;
 //	private SessionFactory sessionFactory;
 //
-//	public BlockAmountDaoImpl() {
+//	public AdjustFinalAmountDaoImpl() {
 //		con = new Configuration().configure();
 //		sessionFactory = con.buildSessionFactory();
 //	}
@@ -31,7 +31,6 @@
 //	}
 //
 //	public void updateCustomerDetails(CustomerDetails userInformation) {
-//
 //		Session session = sessionFactory.openSession();
 //		session.beginTransaction();
 //		session.update(userInformation);

@@ -3,7 +3,7 @@ package com.nagarro.adminPanel.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nagarro.adminPanel.dao.BlockAmountDao;
+import com.nagarro.adminPanel.dao.FetchAndUpdateCustomerDao;
 import com.nagarro.adminPanel.dto.BlockAmountDTO;
 import com.nagarro.adminPanel.model.CustomerDetails;
 
@@ -11,14 +11,14 @@ import com.nagarro.adminPanel.model.CustomerDetails;
 public class BlockAmountServicesImpl implements BlockAmountServices {
 
 	@Autowired
-	BlockAmountDao blockAmountDao;
-
+	FetchAndUpdateCustomerDao fetchAndUpdateCustomerDao;
+	
 	BlockAmountDTO isCustomerEligible = new BlockAmountDTO();
 
 	@Override
 	public BlockAmountDTO validateUserAndBlockAmount(String customerID, double blockAmount) {
 
-		CustomerDetails userInformation = blockAmountDao.fetchCustomerDetails(customerID);
+		CustomerDetails userInformation = fetchAndUpdateCustomerDao.fetchCustomerDetails(customerID);
 
 		double customerAccountBalance = userInformation.getAccountBalance();
 		double customerBlockedBalance = userInformation.getBlockedAmount();
@@ -34,7 +34,7 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 			isCustomerEligible.setAvailableAccountBalance(updatedAccountBalance);
 			isCustomerEligible.setBlockedAmount(updatedBlockedBalance);
 
-			blockAmountDao.updateCustomerDetails(userInformation);
+			fetchAndUpdateCustomerDao.updateCustomerDetails(userInformation);
 
 		}
 
