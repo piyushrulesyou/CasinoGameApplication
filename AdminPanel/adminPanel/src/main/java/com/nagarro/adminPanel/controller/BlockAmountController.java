@@ -13,12 +13,11 @@ public class BlockAmountController {
 
 	@Autowired
 	BlockAmountServices blockAmountServices;
-	
+
 	@GetMapping("/blockPlayAmount/{customerID}/{blockAmount}")
 	public BlockAmountDTO validateAndBlockAmount(@PathVariable String customerID, @PathVariable double blockAmount) {
-		
+
 		BlockAmountDTO isEligibleCustomer = blockAmountServices.validateUserAndBlockAmount(customerID, blockAmount);
-		
 		return isEligibleCustomer;
 	}
 
