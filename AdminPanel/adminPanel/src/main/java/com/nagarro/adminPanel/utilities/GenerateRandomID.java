@@ -18,6 +18,8 @@ public class GenerateRandomID {
 
 		String finalID = firstPart + randOne + secondPart + randTwo + thirdPart + randThree;
 
+		finalID = finalID.replaceAll("\\s", "");
+
 		return finalID;
 	}
 

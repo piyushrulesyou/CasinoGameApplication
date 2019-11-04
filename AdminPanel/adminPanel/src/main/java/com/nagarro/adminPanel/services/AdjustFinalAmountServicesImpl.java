@@ -17,30 +17,13 @@ public class AdjustFinalAmountServicesImpl implements AdjustFinalAmountServices 
 
 	public UpdatedFinalAmountDTO updateFinalAmountBalance(String customerID, double finalAmountWonLost) {
 
-//		int wonOrLost = (int) finalAmountWonLost % 10;
-//		boolean gameWon = true;
-//
-//		double amountToBeAdjusted = finalAmountWonLost / 10;
-//
-//		if (wonOrLost == 0) {
-//			gameWon = false;
-//		}
-
 		CustomerDetails userInformation = fetchAndUpdateCustomerDao.fetchCustomerDetails(customerID);
 
-		System.out.println("12 " + userInformation.getCustomerID());
-
 		double accountBalance = userInformation.getAccountBalance();
-//		double blockedAmount = userInformation.getBlockedAmount();
-
-		System.out.println("13" + accountBalance);
 
 		double finalAccountBalance;
 
-//		if (gameWon)
 		finalAccountBalance = accountBalance + finalAmountWonLost;
-//		else
-//			finalAccountBalance = accountBalance + blockedAmount - amountToBeAdjusted;
 
 		double finalBlockedAmount = 0;
 

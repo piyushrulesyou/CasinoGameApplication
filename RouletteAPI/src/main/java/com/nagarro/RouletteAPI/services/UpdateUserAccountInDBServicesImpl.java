@@ -20,13 +20,9 @@ public class UpdateUserAccountInDBServicesImpl implements UpdateUserAccountInDBS
 
 		double finalUserBlockAmount = gameResultDTO.getFinalUserBlockAmount();
 
-		System.out.println("9 " + finalUserBlockAmount);
-
 		Map<String, String> updateUserAccount = new HashMap<>();
 		updateUserAccount.put("customerID", customerID);
 		updateUserAccount.put("finalAmountWonLost", "" + finalUserBlockAmount);
-
-		System.out.println("19 " + updateUserAccount.get("finalAmountWonLost"));
 
 		RestTemplate restTemplate = new RestTemplate();
 

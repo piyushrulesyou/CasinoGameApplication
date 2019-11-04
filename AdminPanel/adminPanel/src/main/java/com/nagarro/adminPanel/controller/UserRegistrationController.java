@@ -45,11 +45,7 @@ public class UserRegistrationController {
 		ModelAndView modelAndView = null;
 
 		if (!is18Above) {
-			String errorMessage = "Please provide a valid input and try again!";
-//			modelAndView = new ModelAndView("RegisterUser");
-//			modelAndView.addObject("statusMessage", errorMessage);
-//			return modelAndView;
-
+			String errorMessage = "Invalid User!! Age should be greater than 18 Years";
 			modelAndView =  showRegisterPage(request, response, errorMessage);
 			return modelAndView;
 

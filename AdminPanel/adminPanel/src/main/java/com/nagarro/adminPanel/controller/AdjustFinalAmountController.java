@@ -18,11 +18,7 @@ public class AdjustFinalAmountController {
 	public UpdatedFinalAmountDTO updateFinalAmountBalance(@PathVariable String customerID,
 			@PathVariable String finalAmountWonLost) {
 
-		System.out.println("14 " + finalAmountWonLost);
-
 		double finalAmountToBeAdjust = Double.parseDouble(finalAmountWonLost);
-
-		System.out.println("11 " + finalAmountToBeAdjust);
 
 		UpdatedFinalAmountDTO updatedUserInformation = adjustFinalAmountServices.updateFinalAmountBalance(customerID,
 				finalAmountToBeAdjust);
