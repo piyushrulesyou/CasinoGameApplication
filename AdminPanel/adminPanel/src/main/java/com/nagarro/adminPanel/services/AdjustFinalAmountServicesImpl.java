@@ -28,8 +28,12 @@ public class AdjustFinalAmountServicesImpl implements AdjustFinalAmountServices 
 
 		CustomerDetails userInformation = fetchAndUpdateCustomerDao.fetchCustomerDetails(customerID);
 
+		System.out.println("12 " + userInformation.getCustomerID());
+
 		double accountBalance = userInformation.getAccountBalance();
 //		double blockedAmount = userInformation.getBlockedAmount();
+
+		System.out.println("13" + accountBalance);
 
 		double finalAccountBalance;
 

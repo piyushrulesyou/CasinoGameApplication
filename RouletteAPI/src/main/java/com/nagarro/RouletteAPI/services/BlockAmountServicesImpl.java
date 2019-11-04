@@ -26,7 +26,6 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 		
 		userGameEligibility = restTemplate.getForObject(uri, BlockAmountDTO.class, blockPlayAmount);
 		return userGameEligibility;
-
 	}
 
 }

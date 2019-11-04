@@ -5,8 +5,10 @@ public class Constants {
 
 	public static final String uriBlockAmount = "http://localhost:8085/adminPanel/blockPlayAmount/{customerID}/{blockAmount}";
 
+	public static final String uriUpdateUserAccount = "http://localhost:8085/adminPanel/adjustFinal/{customerID}/{finalAmountWonLost}";
+
 //	public static final String firstTwelve;
-	
+
 //	public static final String
 //	
 //	public static final String
@@ -16,6 +18,5 @@ public class Constants {
 //	public static final String
 //	
 //	public static final String
-	
-	
+
 }

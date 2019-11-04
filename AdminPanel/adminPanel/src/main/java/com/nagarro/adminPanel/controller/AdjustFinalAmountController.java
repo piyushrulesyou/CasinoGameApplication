@@ -14,12 +14,18 @@ public class AdjustFinalAmountController {
 	@Autowired
 	AdjustFinalAmountServices adjustFinalAmountServices;
 
-	@GetMapping("/adjustFinal/{customerID}/{finalAmountWonLost}")
+	@GetMapping("/adjustFinal/{customerID}/{finalAmountWonLost:.+}")
 	public UpdatedFinalAmountDTO updateFinalAmountBalance(@PathVariable String customerID,
-			@PathVariable double finalAmountWonLost) {
+			@PathVariable String finalAmountWonLost) {
+
+		System.out.println("14 " + finalAmountWonLost);
+
+		double finalAmountToBeAdjust = Double.parseDouble(finalAmountWonLost);
+
+		System.out.println("11 " + finalAmountToBeAdjust);
 
 		UpdatedFinalAmountDTO updatedUserInformation = adjustFinalAmountServices.updateFinalAmountBalance(customerID,
-				finalAmountWonLost);
+				finalAmountToBeAdjust);
 
 		return updatedUserInformation;
 
