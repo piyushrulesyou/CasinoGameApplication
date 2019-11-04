@@ -19,18 +19,12 @@ public class ValidateUserController {
 	@Autowired
 	ValidateUserServices validateUserServices;
 
-//	ValidateUserServices validateUserServices = new ValidateUserServicesImpl();
-
 	@GET
 	@Path("validateUser/{customerID}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public LoginServicesDTO validateUserAndGetUserDetails(@PathParam("customerID") String customerID) {
 
-		System.out.println("1 " + customerID);
-
 		LoginServicesDTO userInformation = validateUserServices.validateUserAndGetUserDetails(customerID);
-
-		System.out.println("2 " + userInformation.getCustomerName());
 
 		return userInformation;
 	}

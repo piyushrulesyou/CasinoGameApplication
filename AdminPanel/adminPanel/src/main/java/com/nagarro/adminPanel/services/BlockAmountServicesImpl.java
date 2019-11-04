@@ -12,7 +12,7 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 
 	@Autowired
 	FetchAndUpdateCustomerDao fetchAndUpdateCustomerDao;
-	
+
 	BlockAmountDTO isCustomerEligible = new BlockAmountDTO();
 
 	@Override
@@ -30,7 +30,7 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 			double updatedBlockedBalance = customerBlockedBalance + blockAmount;
 			userInformation.setBlockedAmount(updatedBlockedBalance);
 
-			isCustomerEligible.setValidGame(true);
+			isCustomerEligible.setIsValidGame(true);
 			isCustomerEligible.setAvailableAccountBalance(updatedAccountBalance);
 			isCustomerEligible.setBlockedAmount(updatedBlockedBalance);
 
@@ -40,7 +40,7 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 
 		else {
 
-			isCustomerEligible.setValidGame(false);
+			isCustomerEligible.setIsValidGame(false);
 			isCustomerEligible.setAvailableAccountBalance(userInformation.getAccountBalance());
 			isCustomerEligible.setBlockedAmount(userInformation.getBlockedAmount());
 

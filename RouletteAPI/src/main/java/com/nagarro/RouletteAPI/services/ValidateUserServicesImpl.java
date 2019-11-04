@@ -12,10 +12,7 @@ import com.nagarro.RouletteAPI.dto.LoginServicesDTO;
 @Service
 public class ValidateUserServicesImpl implements ValidateUserServices {
 
-	@Override
 	public LoginServicesDTO validateUserAndGetUserDetails(String customerID) {
-
-		System.out.println("3 " + customerID);
 
 		final String uri = Constants.uriValidateUser;
 
@@ -25,8 +22,6 @@ public class ValidateUserServicesImpl implements ValidateUserServices {
 		RestTemplate restTemplate = new RestTemplate();
 
 		LoginServicesDTO userInformation = restTemplate.getForObject(uri, LoginServicesDTO.class, mapValidate);
-
-		System.out.println("4 " + userInformation.getCustomerName());
 
 		return userInformation;
 	}

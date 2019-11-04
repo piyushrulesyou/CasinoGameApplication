@@ -1,4 +1,4 @@
-package com.nagarro.adminPanel.dto;
+package com.nagarro.RouletteAPI.dto;
 
 public class BlockAmountDTO {
 
