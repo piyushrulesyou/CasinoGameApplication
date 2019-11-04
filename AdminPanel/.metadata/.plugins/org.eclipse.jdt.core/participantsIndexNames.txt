@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-D:\TRAINING-Nagarro\EXIT_PROJECT\AdminPanel\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1819058541.index
-\adminPanel\src\main\resources

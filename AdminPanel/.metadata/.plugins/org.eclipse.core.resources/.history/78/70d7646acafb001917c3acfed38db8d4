@@ -1,9 +1,0 @@
-package com.nagarro.adminPanel.services;
-
-import com.nagarro.adminPanel.model.CustomerDetails;
-
-public interface UserRegistrationServices {
-
-	void registerUser(CustomerDetails userInformation);
-
-}

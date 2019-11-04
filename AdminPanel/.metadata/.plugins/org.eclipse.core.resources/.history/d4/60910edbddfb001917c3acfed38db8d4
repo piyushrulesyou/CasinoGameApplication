@@ -1,5 +1,0 @@
-package com.nagarro.adminPanel.dao;
-
-public class UserListDaoImpl {
-
-}

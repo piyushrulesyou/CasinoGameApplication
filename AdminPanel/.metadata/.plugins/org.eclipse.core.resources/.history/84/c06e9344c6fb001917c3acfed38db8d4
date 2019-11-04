@@ -1,8 +1,0 @@
-package com.nagarro.adminPanel.utilities;
-
-public class GenerateRandomID {
-
-	public String generateRandomID(String emailID, int contactNumber, int customerName)
-	
-	
-}

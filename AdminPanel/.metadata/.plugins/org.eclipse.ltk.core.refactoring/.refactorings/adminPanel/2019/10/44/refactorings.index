@@ -1,8 +1,0 @@
-1572512223442	Delete element
-1572512620944	Delete element
-1572526786723	Rename resource 'CustomerList.jsp'
-1572527041492	Extract interface 'UserListServices'
-1572527127803	Extract interface 'UserListDao'
-1572548356955	Extract interface 'FilterUsersServices'
-1572548400024	Extract interface 'FilterUsersDao'
-1572550219336	Delete element

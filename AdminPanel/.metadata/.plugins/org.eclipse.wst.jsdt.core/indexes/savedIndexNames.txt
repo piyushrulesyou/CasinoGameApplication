@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+D:\TRAINING-Nagarro\EXIT_PROJECT\AdminPanel\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3426165161.index
-444562312.index
-1819058541.index
-1936437201.index
-1819058541.index
-730202726.index
-3841562761.index
-2175597073.index
