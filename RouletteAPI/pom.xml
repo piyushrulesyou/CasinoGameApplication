@@ -39,6 +39,8 @@
 		</dependencies>
 	</dependencyManagement>
 
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
@@ -46,18 +48,16 @@
 			<!-- use the following artifactId if you don't need servlet 2.x compatibility -->
 			<!-- artifactId>jersey-container-servlet</artifactId -->
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.glassfish.jersey.inject</groupId> -->
-		<!-- <artifactId>jersey-hk2</artifactId> -->
-		<!-- </dependency> -->
-		<!-- uncomment this to get JSON support <dependency> <groupId>org.glassfish.jersey.media</groupId> 
-			<artifactId>jersey-media-json-binding</artifactId> </dependency> -->
+
+
 
 		<!-- Jersey extension module providing support for Mustache templates -->
 		<dependency>
 			<groupId>org.glassfish.jersey.ext</groupId>
 			<artifactId>jersey-mvc-mustache</artifactId>
 		</dependency>
+
+
 
 		<!-- Jersey extension module providing support for Spring 3 integration -->
 		<dependency>
@@ -80,12 +80,13 @@
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-aop</artifactId>
 				</exclusion>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-validator</artifactId>
-				</exclusion>
+
+
+
 			</exclusions>
 		</dependency>
+
+
 
 		<!-- Spring Framework 4.x -->
 		<dependency>
@@ -99,42 +100,35 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- Hibernate Core 5.2.x -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-ehcache</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.3.4.Final</version>
-		</dependency>
 
-		<!-- MySql-Connector -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
+			<artifactId>jersey-media-moxy</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.0</version>
 		</dependency>
 	</dependencies>
 
 
+
 	<properties>
-		<!-- <jersey.version>2.29.1</jersey.version> -->
 		<jersey.version>2.25</jersey.version>
 		<spring.version>4.3.5.RELEASE</spring.version>
-		<hibernate.version>5.2.6.Final</hibernate.version>
-		<mysql.version>5.1.40</mysql.version>
 		<compileSource>1.8</compileSource>
 		<maven.compiler.version>3.6.0</maven.compiler.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
