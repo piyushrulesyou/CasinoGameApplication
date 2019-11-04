@@ -16,7 +16,7 @@ public class CustomerDetails {
 	private String emailID;
 //	private String idProof;
 	private double accountBalance;
-
+	private double blockedAmount;
 
 	public String getCustomerID() {
 		return customerID;
@@ -65,7 +65,6 @@ public class CustomerDetails {
 //	public void setIdProof(String idProof) {
 //		this.idProof = idProof;
 //	}
-	
 
 	public double getAccountBalance() {
 		return accountBalance;
@@ -75,12 +74,19 @@ public class CustomerDetails {
 		this.accountBalance = accountBalance;
 	}
 
+	public double getBlockedAmount() {
+		return blockedAmount;
+	}
+
+	public void setBlockedAmount(double blockedAmount) {
+		this.blockedAmount = blockedAmount;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerDetails [customerID=" + customerID + ", customerName=" + customerName + ", dateOfBirth="
 				+ dateOfBirth + ", contactNumber=" + contactNumber + ", emailID=" + emailID + ", accountBalance="
-				+ accountBalance + "]";
+				+ accountBalance + ", blockedAmount=" + blockedAmount + "]";
 	}
 
-	
 }
