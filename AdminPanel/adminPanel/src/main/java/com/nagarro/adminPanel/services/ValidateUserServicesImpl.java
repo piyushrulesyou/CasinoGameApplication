@@ -5,19 +5,23 @@ import org.springframework.stereotype.Service;
 
 import com.nagarro.adminPanel.dao.ValidateUserDao;
 import com.nagarro.adminPanel.dto.LoginServicesDTO;
+import com.nagarro.adminPanel.model.CustomerDetails;
 
 @Service
 public class ValidateUserServicesImpl implements ValidateUserServices {
 
-	LoginServicesDTO customerLoginInformation;
-	
+	LoginServicesDTO customerLoginInformation = new LoginServicesDTO();
+
 	@Autowired
 	ValidateUserDao validateUserDao;
 
 	@Override
 	public LoginServicesDTO validateUser(String customerID) {
-		LoginServicesDTO customerLoginInformation = validateUserDao.validateUser(customerID);
-		
+		CustomerDetails customerInformation = validateUserDao.validateUser(customerID);
+
+		customerLoginInformation.setCustomerName(customerInformation.getCustomerName());
+		customerLoginInformation.setAccountBalance(customerInformation.getAccountBalance());
+
 		return customerLoginInformation;
 	}
 }

@@ -63,6 +63,7 @@
 				<th>Contact</th>
 				<th>Email</th>
 				<th>Balance(in Rs.)</th>
+				<th>Blocked Amount</th>
 				<th>Recharge</th>
 			</tr>
 
@@ -79,6 +80,8 @@
 					<td>${eachUser.contactNumber}</td>
 					<td>${eachUser.emailID}</td>
 					<td>${eachUser.accountBalance}</td>
+					<td>${eachUser.blockedAmount}</td>
+					
 
 					<td><button
 							id="${eachUser.customerID}-${eachUser.customerName}"

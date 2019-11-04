@@ -1,9 +1,9 @@
 package com.nagarro.adminPanel.dao;
 
-import com.nagarro.adminPanel.dto.LoginServicesDTO;
+import com.nagarro.adminPanel.model.CustomerDetails;
 
 public interface ValidateUserDao {
 
-	public LoginServicesDTO validateUser(String customerID);
+	public CustomerDetails validateUser(String customerID);
 
 }

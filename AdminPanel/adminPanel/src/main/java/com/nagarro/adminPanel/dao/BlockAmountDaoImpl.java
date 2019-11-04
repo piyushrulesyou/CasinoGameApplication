@@ -8,30 +8,36 @@ import org.springframework.stereotype.Repository;
 import com.nagarro.adminPanel.model.CustomerDetails;
 
 @Repository
-public class ValidateUserDaoImpl implements ValidateUserDao {
+public class BlockAmountDaoImpl implements BlockAmountDao {
 
 	private Configuration con;
 	private SessionFactory sessionFactory;
 
-	public ValidateUserDaoImpl() {
+	public BlockAmountDaoImpl() {
 		con = new Configuration().configure();
 		sessionFactory = con.buildSessionFactory();
 	}
 
-	public CustomerDetails validateUser(String customerID) {
+	public CustomerDetails fetchCustomerDetails(String customerID) {
+
 		try {
-
 			Session session = sessionFactory.openSession();
-
 			CustomerDetails userInformation = session.get(CustomerDetails.class, customerID);
-
 			session.close();
-
 			return userInformation;
-
 		} catch (NullPointerException exception) {
 			return null;
 		}
+	}
+
+	public void updateCustomerDetails(CustomerDetails userInformation) {
+
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.update(userInformation);
+		session.getTransaction().commit();
+		session.close();
 
 	}
+
 }
