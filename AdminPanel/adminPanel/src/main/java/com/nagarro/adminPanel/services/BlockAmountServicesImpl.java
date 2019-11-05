@@ -15,7 +15,6 @@ public class BlockAmountServicesImpl implements BlockAmountServices {
 
 	BlockAmountDTO isCustomerEligible = new BlockAmountDTO();
 
-	@Override
 	public BlockAmountDTO validateUserAndBlockAmount(String customerID, double blockAmount) {
 
 		CustomerDetails userInformation = fetchAndUpdateCustomerDao.fetchCustomerDetails(customerID);

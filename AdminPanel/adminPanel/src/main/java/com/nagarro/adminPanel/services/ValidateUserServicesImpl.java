@@ -15,7 +15,6 @@ public class ValidateUserServicesImpl implements ValidateUserServices {
 	@Autowired
 	ValidateUserDao validateUserDao;
 
-	@Override
 	public LoginServicesDTO validateUser(String customerID) {
 		CustomerDetails customerInformation = validateUserDao.validateUser(customerID);
 
