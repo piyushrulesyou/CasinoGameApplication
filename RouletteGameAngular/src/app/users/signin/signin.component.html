@@ -11,4 +11,7 @@
     <div class="form-group">
         <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Start Playing</button>
     </div>
+
+    <div class="validationError" *ngIf="isInvalidUser">Invalid UserID!!</div>
+    <!-- <div></div> -->
 </form>

@@ -18,6 +18,9 @@ public class ValidateUserServicesImpl implements ValidateUserServices {
 	public LoginServicesDTO validateUser(String customerID) {
 		CustomerDetails customerInformation = validateUserDao.validateUser(customerID);
 
+		if(customerInformation == null)
+			return null;
+		
 		customerLoginInformation.setCustomerName(customerInformation.getCustomerName());
 		customerLoginInformation.setAccountBalance(customerInformation.getAccountBalance());
 

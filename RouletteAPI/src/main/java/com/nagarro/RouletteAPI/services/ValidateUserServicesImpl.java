@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.nagarro.RouletteAPI.constants.Constants;
@@ -16,14 +17,22 @@ public class ValidateUserServicesImpl implements ValidateUserServices {
 
 		final String uri = Constants.uriValidateUser;
 
-		Map<String, String> mapValidate = new HashMap<>();
-		mapValidate.put("customerID", customerID);
+		try {
 
-		RestTemplate restTemplate = new RestTemplate();
+			Map<String, String> mapValidate = new HashMap<>();
+			mapValidate.put("customerID", customerID);
 
-		LoginServicesDTO userInformation = restTemplate.getForObject(uri, LoginServicesDTO.class, mapValidate);
+			RestTemplate restTemplate = new RestTemplate();
 
-		return userInformation;
+			LoginServicesDTO userInformation = restTemplate.getForObject(uri, LoginServicesDTO.class, mapValidate);
+
+			return userInformation;
+		} catch (NullPointerException exception) {
+			return null;
+		} catch (HttpServerErrorException exception) {
+			return null;
+		}
+
 	}
 
 }

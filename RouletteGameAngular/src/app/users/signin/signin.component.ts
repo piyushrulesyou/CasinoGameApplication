@@ -30,9 +30,15 @@ export class SigninComponent implements OnInit {
     this.validateUser(loginForm);
   }
 
+  isInvalidUser: boolean = false;
+
   validateUser(loginForm: NgForm) {
-    this.loginService.validateUser(loginForm.value).subscribe(res => {
-      console.log(res);
+    this.loginService.validateUser(loginForm.value).subscribe(response => {
+      console.log(response);
+
+      if(response == null)
+        this.isInvalidUser = true;
+
       this.resetForm(loginForm);
     });
   }
