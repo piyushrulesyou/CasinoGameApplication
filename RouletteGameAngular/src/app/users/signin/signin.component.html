@@ -1,8 +1,13 @@
 <p>signin works!</p>
 
-<table>
-    <tr>
-        <th>Enter your Unique ID</th>
-        <th><input type="text" placeholder="Unique User ID"></th>
-    </tr>
-</table>
+<form #form="ngForm">
+    <div class="form-group">
+        <label>Enter Unique User ID</label>
+        <input name="customerID" #customerID="ngModel" [(ngModel)]="service.loginFormData.customerID" class="form-control" required>
+    </div>
+
+    <div class="form-control">
+        <button type="submit" class="btn btn-lg btn-block">Start Playing</button>
+
+    </div>
+</form>

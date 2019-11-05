@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+// import { ValidateUser } from '../../model/validate_user.model';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { UserLogin } from '../../model/login_info.model';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'nag-signin',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: LoginService) { }
 
   ngOnInit() {
+    this.resetForm();
   }
-
+  resetForm() {
+    throw new Error("Method not implemented.");
+  }
 }
