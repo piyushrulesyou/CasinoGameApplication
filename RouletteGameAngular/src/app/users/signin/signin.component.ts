@@ -32,6 +32,7 @@ export class SigninComponent implements OnInit {
 
   validateUser(loginForm: NgForm) {
     this.loginService.validateUser(loginForm.value).subscribe(res => {
+      console.log(res);
       this.resetForm(loginForm);
     });
   }

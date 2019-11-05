@@ -10,14 +10,14 @@ import { UserLogin } from '../model/login_info.model';
 })
 export class LoginService {
 
-  private readonly loginURI = "http://localhost:8080/validate/validateUser";
+  private readonly loginURI = "http://localhost:8080/RouletteAPI/webapi/validate/validateUser";
 
   loginFormData: UserLogin;
 
   constructor(private httpClient: HttpClient) { }
 
   validateUser(loginFormData: UserLogin) {
-    return this.httpClient.get(this.loginURI + '/loginFormData');
+    return this.httpClient.get(this.loginURI + '/' + loginFormData.customerID);
   }
 
 }
