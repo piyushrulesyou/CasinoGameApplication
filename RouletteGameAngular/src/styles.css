@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+input.ng-touched.ng-invalid{
+    border-color: crimson;
+}
+
+div.validationError {
+    width: 100%;
+    margin-top: .25em;
+    font-size: 80%;
+    color: #dc3545;
+}

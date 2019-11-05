@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { UserLogin } from '../../model/login_info.model';
 import { LoginService } from '../../services/login.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'nag-signin',
@@ -11,12 +12,27 @@ import { LoginService } from '../../services/login.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(public service: LoginService) { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit() {
     this.resetForm();
   }
-  resetForm() {
-    throw new Error("Method not implemented.");
+  resetForm(loginForm?: NgForm) {
+    if (loginForm != null)
+      loginForm.resetForm();
+
+    this.loginService.loginFormData = {
+      customerID: ''
+    }
+  }
+
+  onSubmit(loginForm: NgForm) {
+    this.validateUser(loginForm);
+  }
+
+  validateUser(loginForm: NgForm) {
+    this.loginService.validateUser(loginForm.value).subscribe(res => {
+      this.resetForm(loginForm);
+    });
   }
 }

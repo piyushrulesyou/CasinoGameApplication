@@ -1,13 +1,14 @@
-<p>signin works!</p>
-
-<form #form="ngForm">
+<form #form="ngForm" (submit)=onSubmit(form) autocomplete="off">
     <div class="form-group">
         <label>Enter Unique User ID</label>
-        <input name="customerID" #customerID="ngModel" [(ngModel)]="service.loginFormData.customerID" class="form-control" required>
+        <input name="customerID" #customerID="ngModel" [(ngModel)]="loginService.loginFormData.customerID"
+            class="form-control" required>
     </div>
 
-    <div class="form-control">
-        <button type="submit" class="btn btn-lg btn-block">Start Playing</button>
+    <div class="validationError" *ngIf="customerID.invalid && customerID.touched">
+        *This field is mandatory.</div>
 
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Start Playing</button>
     </div>
 </form>
