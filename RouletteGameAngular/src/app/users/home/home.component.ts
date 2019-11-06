@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nag-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    if (!window.localStorage.getItem('loginUserName')) {
+      this.router.navigate(['login']);
+    }
   }
+
+  customerName: string = window.localStorage.getItem('loginUserName');
+  accountBalance: string = window.localStorage.getItem('loginUserAccountBalance');
 
 }

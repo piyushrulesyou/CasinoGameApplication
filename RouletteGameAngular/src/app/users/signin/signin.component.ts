@@ -43,7 +43,7 @@ export class SigninComponent implements OnInit {
         this.isInvalidUser = true;
       else {
         window.localStorage.setItem('loginUserName', response.customerName.toString());
-        window.localStorage.setItem('loginUserAccount', response.accountBalance.toString());
+        window.localStorage.setItem('loginUserAccountBalance', response.accountBalance.toString());
         // console.log(response.customerName);
         // console.log(response.accountBalance);
         this.router.navigate(['home']);
