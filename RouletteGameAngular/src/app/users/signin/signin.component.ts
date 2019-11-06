@@ -43,9 +43,6 @@ export class SigninComponent implements OnInit {
         window.localStorage.setItem('loginUserName', response.customerName.toString());
         window.localStorage.setItem('loginUserAccountBalance', response.accountBalance.toString());
 
-        // console.log(response.customerName);
-        // console.log(response.accountBalance);
-
         this.router.navigate(['home']);
       }
     });

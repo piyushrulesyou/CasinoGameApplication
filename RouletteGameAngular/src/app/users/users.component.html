@@ -17,11 +17,13 @@
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
+                Welcome {{customerName}}!!
             </button>
             <div class="dropdown-menu" style="width:100%" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item disabled" href="#">{{customerName}}</a>
+                <!-- <a class="dropdown-item disabled" href="#">{{customerName}}</a> -->
+                <a class="dropdown-item disabled" href="#"><strong>Account Balance:</strong></a>
                 <a class="dropdown-item disabled" href="#">{{accountBalance}}</a>
+                <div class="dropdown-divider"></div>
                 <button class="dropdown-item" (click)=onLogout()>Logout</button>
             </div>
         </div>
