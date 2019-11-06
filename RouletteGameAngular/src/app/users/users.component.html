@@ -1,5 +1,37 @@
 <!-- <nag-home></nag-home> -->
 
 <!-- <nag-signin></nag-signin> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    <a class="navbar-brand" routerLink="/home"><img class="rouletteLogo" src="../../assets/img/roulette_client.png"
+            alt="casino_logo">
+        Roulette</a>
+
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Play <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a> -->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">LogOut</a>
+            </div>
+        </li>
+    </ul>
+    <!-- </div> -->
+</nav>
 
 <router-outlet></router-outlet>
