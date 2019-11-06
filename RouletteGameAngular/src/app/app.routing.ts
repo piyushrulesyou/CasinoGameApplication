@@ -11,5 +11,4 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'play', component: PlayComponent }
 ];
-
 export const routing = RouterModule.forRoot(routes);
