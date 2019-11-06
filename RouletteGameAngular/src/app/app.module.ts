@@ -10,6 +10,8 @@ import { SigninComponent } from './users/signin/signin.component';
 import { HomeComponent } from './users/home/home.component';
 import { LoginService } from './services/login.service';
 
+import { routing } from "../app/app.routing";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import { LoginService } from './services/login.service';
   ],
   imports: [
     BrowserModule,
+    routing,
     HttpClientModule,
     FormsModule
   ],

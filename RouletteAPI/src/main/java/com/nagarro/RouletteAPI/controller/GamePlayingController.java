@@ -7,7 +7,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.nagarro.RouletteAPI.dto.BlockAmountDTO;
 import com.nagarro.RouletteAPI.dto.GameResultDTO;
@@ -16,7 +17,8 @@ import com.nagarro.RouletteAPI.services.GamePlayingServices;
 import com.nagarro.RouletteAPI.services.UpdateUserAccountInDBServices;
 
 @Path("play")
-@Controller
+//@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
 public class GamePlayingController {
 
 	@Autowired

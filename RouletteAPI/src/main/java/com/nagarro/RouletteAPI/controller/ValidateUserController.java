@@ -7,13 +7,15 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.nagarro.RouletteAPI.dto.LoginServicesDTO;
 import com.nagarro.RouletteAPI.services.ValidateUserServices;
 
 @Path("validate")
-@Controller
+//@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
 public class ValidateUserController {
 
 	@Autowired
@@ -37,7 +39,6 @@ public class ValidateUserController {
 	public LoginServicesDTO validateUserAndGetUserDetails(@PathParam("customerID") String customerID) {
 
 		LoginServicesDTO userInformation = validateUserServices.validateUserAndGetUserDetails(customerID);
-
 		return userInformation;
 	}
 
