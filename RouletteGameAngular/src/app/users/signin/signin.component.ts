@@ -1,7 +1,5 @@
-// import { ValidateUser } from '../../model/validate_user.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { UserLogin } from '../../model/login_info.model';
 import { LoginService } from '../../services/login.service';
 import { NgForm } from '@angular/forms';
 
@@ -36,7 +34,7 @@ export class SigninComponent implements OnInit {
 
   validateUser(loginForm: NgForm) {
     this.loginService.validateUser(loginForm.value).subscribe(response => {
-                  
+
       this.resetForm(loginForm);
 
       if (response == null)
@@ -47,6 +45,7 @@ export class SigninComponent implements OnInit {
 
         // console.log(response.customerName);
         // console.log(response.accountBalance);
+
         this.router.navigate(['home']);
       }
     });
