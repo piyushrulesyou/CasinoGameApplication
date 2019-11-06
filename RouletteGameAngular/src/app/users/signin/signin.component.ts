@@ -1,7 +1,7 @@
 // import { ValidateUser } from '../../model/validate_user.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserLogin } from '../../model/login_info.model';
+// import { UserLogin } from '../../model/login_info.model';
 import { LoginService } from '../../services/login.service';
 import { NgForm } from '@angular/forms';
 
