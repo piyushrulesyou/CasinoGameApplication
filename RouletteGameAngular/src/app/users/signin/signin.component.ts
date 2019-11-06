@@ -35,8 +35,8 @@ export class SigninComponent implements OnInit {
   isInvalidUser: boolean = false;
 
   validateUser(loginForm: NgForm) {
-    this.loginService.validateUser(loginForm.value).subscribe((response) => {
-      console.log(response);
+    this.loginService.validateUser(loginForm.value).subscribe(response => {
+                  
       this.resetForm(loginForm);
 
       if (response == null)
@@ -44,6 +44,7 @@ export class SigninComponent implements OnInit {
       else {
         window.localStorage.setItem('loginUserName', response.customerName.toString());
         window.localStorage.setItem('loginUserAccountBalance', response.accountBalance.toString());
+
         // console.log(response.customerName);
         // console.log(response.accountBalance);
         this.router.navigate(['home']);

@@ -1,9 +1,10 @@
 package com.nagarro.RouletteAPI.services;
 
 import com.nagarro.RouletteAPI.dto.LoginServicesDTO;
+import com.sun.jersey.api.client.WebResource;
 
 public interface ValidateUserServices {
 
-	public LoginServicesDTO validateUserAndGetUserDetails(String customerID);
+	public WebResource validateUserAndGetUserDetails(String customerID);
 
 }

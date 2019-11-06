@@ -9,30 +9,20 @@ import org.springframework.web.client.RestTemplate;
 
 import com.nagarro.RouletteAPI.constants.Constants;
 import com.nagarro.RouletteAPI.dto.LoginServicesDTO;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
 
 @Service
 public class ValidateUserServicesImpl implements ValidateUserServices {
 
-	public LoginServicesDTO validateUserAndGetUserDetails(String customerID) {
+	public WebResource validateUserAndGetUserDetails(String customerID) {
 
-		final String uri = Constants.uriValidateUser;
 
-		try {
-
-			Map<String, String> mapValidate = new HashMap<>();
-			mapValidate.put("customerID", customerID);
-
-			RestTemplate restTemplate = new RestTemplate();
-
-			LoginServicesDTO userInformation = restTemplate.getForObject(uri, LoginServicesDTO.class, mapValidate);
-
-			return userInformation;
-		} catch (NullPointerException exception) {
-			return null;
-		} catch (HttpServerErrorException exception) {
-			return null;
-		}
-
+		String uri = "http://localhost:8085/adminPanel/customerdetails/";
+		
+		Client client = Client.create();
+		
+		return client.resource(uri + customerID);
 	}
 
 }
