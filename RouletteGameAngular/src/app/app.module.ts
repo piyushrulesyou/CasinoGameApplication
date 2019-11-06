@@ -11,13 +11,15 @@ import { HomeComponent } from './users/home/home.component';
 import { LoginService } from './services/login.service';
 
 import { routing } from "../app/app.routing";
+import { PlayComponent } from './users/play/play.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     SigninComponent,
-    HomeComponent
+    HomeComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,

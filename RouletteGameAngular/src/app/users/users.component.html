@@ -10,18 +10,18 @@
             <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#">Play <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/play">Play <span class="sr-only">(current)</span></a>
         </li>
     </ul>
     <div *ngIf="accountBalance != null">
-        <div class="dropdown" >
+        <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 More
             </button>
             <div class="dropdown-menu" style="width:100%" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">{{customerName}}</a>
-                <a class="dropdown-item" href="#">{{accountBalance}}</a>
+                <a class="dropdown-item disabled" href="#">{{customerName}}</a>
+                <a class="dropdown-item disabled" href="#">{{accountBalance}}</a>
                 <button class="dropdown-item" (click)=onLogout()>Logout</button>
             </div>
         </div>
