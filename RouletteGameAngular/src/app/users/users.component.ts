@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
     }
   }
 
+  
   customerName: string = window.localStorage.getItem('loginUserName');
   accountBalance: number = parseFloat(window.localStorage.getItem('loginUserAccountBalance'));
 
@@ -25,5 +26,4 @@ export class UsersComponent implements OnInit {
     this.loginService.deleteToken();
     location.reload();
   }
-
 }

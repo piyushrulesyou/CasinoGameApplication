@@ -13,6 +13,7 @@ import { PlayingService } from './services/playing.service';
 
 import { routing } from "../app/app.routing";
 import { PlayComponent } from './users/play/play.component';
+import { ResultComponent } from './users/result/result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PlayComponent } from './users/play/play.component';
     UsersComponent,
     SigninComponent,
     HomeComponent,
-    PlayComponent
+    PlayComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
