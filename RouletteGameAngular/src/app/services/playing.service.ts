@@ -12,8 +12,6 @@ export class PlayingService {
 
   private readonly gamePlayURI = playingUri;
 
-  // bettingForm: UserBettingValue;
-
   constructor(private httpClient: HttpClient) { }
 
   generateResult(customerID: string, amount: number, betSegment: number): Observable<GameResult> {

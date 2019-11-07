@@ -1,4 +1,9 @@
-<h1>Account Balance: {{accountBalance}}</h1>
-<h1>Blocked Amount: {{blockedAmount}}</h1>
-<h1>Roulette Request: {{rouletteResult}}</h1>
-<h1>Status: {{winOrLose}}</h1>
+<div *ngIf="nullResponse==='true'">
+    Something went wrong!!
+</div>
+<div *ngIf="nullResponse==='false'">
+    <h1>Account Balance: {{accountBalance}}</h1>
+    <h1>Blocked Amount: {{blockedAmount}}</h1>
+    <h1>Roulette Request: {{rouletteResult}}</h1>
+    <h1>Status: {{winOrLose}}</h1>
+</div>

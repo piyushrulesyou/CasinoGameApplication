@@ -12,40 +12,35 @@ import { GameResult } from '../../model/game_result.model';
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.css']
 })
-export class PlayComponent implements OnInit {
+export class PlayComponent {
+
+  // refresh = false;
+  // generatedNum;
+  // winResponse: boolean;
+  // balance: number;
+
+  error: string = null;
+  insufficientBalError: string = null;
+
+  valueZero: number[] = new Array(9).fill(0);
+
+  money: number;
+  segment: number;
 
   constructor(public playingService: PlayingService, private router: Router) { }
 
-  bettingForm: UserBettingValue;
-
   ngOnInit() {
-
-    this.resetForm();
 
     if (!window.localStorage.getItem('loginUserName')) {
       this.router.navigate(['login']);
     }
 
-    this.count = 0;
-    this.ele = 0;
-    this.type = 0;
-    this.isValidGame = true;
-  }
-
-  resetForm(bettingForm?: NgForm) {
-
-    if (bettingForm != null)
-      bettingForm.resetForm();
-
-    this.bettingForm = {
-      first12: 0,
-      second12: 0,
-      last12: 0,
-      zero: 0,
-      first18: 0,
-      last18: 0,
-      even: 0,
-      odd: 0,
+    const firstTime = window.localStorage.getItem('key')
+    if (!firstTime) {
+      localStorage.setItem('key', 'loaded')
+      location.reload()
+    } else {
+      localStorage.removeItem('key')
     }
   }
 
@@ -53,98 +48,82 @@ export class PlayComponent implements OnInit {
   customerName: string = window.localStorage.getItem('loginUserName');
   accountBalance: number = parseFloat(window.localStorage.getItem('loginUserAccountBalance'));
 
-  // value = '';
-  counter: number = 0;
-  amount = 0;
-  gameResult: GameResult;
-  betSegment = '';
-  tempBalance = 0;
-  isValidGame;
-  arr: number[] = [];
+  callMe(event: MouseEvent) {
 
-  count: number = 0;
-  ele: any;
-  type: number;
+    console.log(
+      parseInt((event.target as HTMLInputElement).value));
+    console.log(
+      (event.target as HTMLInputElement).name);
+
+    let inputValue = parseInt((event.target as HTMLInputElement).value);
+    let id = parseInt((event.target as HTMLInputElement).id);
+
+    let temp = this.valueZero[id];
+
+    this.valueZero.fill(0);
+    if (this.accountBalance > inputValue) {
+      this.valueZero[id] = inputValue;
+      this.insufficientBalError = null;
+    }
+    else {
+      this.valueZero[id] = temp;
+      this.insufficientBalError = "Insufficient Balance!"
+    }
+
+    console.log(temp + "temp");
+
+
+    //   console.log(this.amount);
+    //   console.log(this.betSegment);
+
+  }
 
   onSubmit() {
-    // this.resetForm();
-    console.log(this.count);
-    // this.verify();
-    if (this.isValidGame)
-      this.generateResult(this.bettingForm);
-    this.resetForm();
-  }
 
-  modalVerify() {
-    this.verify();
-  }
+    let money = this.valueZero.find(c => c != 0);
+    let gameCase = this.valueZero.findIndex(c => c != 0);
 
-  verify() {
-    this.arr[0] = this.bettingForm.first12;
-    this.arr[1] = this.bettingForm.second12;
-    this.arr[2] = this.bettingForm.last12;
-    this.arr[3] = this.bettingForm.zero;
-    this.arr[4] = this.bettingForm.first18;
-    this.arr[5] = this.bettingForm.last18;
-    this.arr[6] = this.bettingForm.even;
-    this.arr[7] = this.bettingForm.odd;
+    this.money = money;
+    this.segment = gameCase;
 
-    console.log(this.bettingForm.first12);
-    console.log(this.bettingForm.second12);
-    console.log(this.bettingForm.last12);
-    console.log(this.bettingForm.zero);
-    console.log(this.bettingForm.first18);
-    console.log(this.bettingForm.last18);
-    console.log(this.bettingForm.even);
-    console.log(this.bettingForm.odd);
+    if (gameCase != -1) {
+      this.generateResult();
+    }
+    else {
+      this.error = "Please do betting on any one of them."
+    }
 
-    this.arr.forEach(element => {
-      this.counter++;
-      if (element != 0) {
-        this.count++;
-        this.ele = element;
-        this.type = this.counter;
-      }
-    });
-
-    console.log(this.count + "count");
-    console.log(this.type + "counter"); //will contain the selected slot in number
-    console.log(this.ele + "element");  //will contain the value of the selected slot
-
-    if (this.count > 1)
-      this.isValidGame = false;
   }
 
 
+  resetButton() {
+    let gameCase = this.valueZero.findIndex(c => c != 0);
+    // if (gameCase != -1)
+    location.reload();
+  }
 
-  generateResult(bettingForm: UserBettingValue) {
-    this.playingService.generateResult(this.customerID, this.ele, this.type).subscribe(response => {
+
+  resetButton2() {
+    let gameCase = this.valueZero.findIndex(c => c != 0);
+    // if (gameCase != -1)
+    location.reload();
+  }
+
+  generateResult() {
+    this.playingService.generateResult(this.customerID, this.money, this.segment).subscribe(response => {
       console.log(response);
-      this.gameResult = response;
+      // this.gameResult = response;
       if (response != null) {
         window.localStorage.setItem('loginUserAccountBalance', response.finalUserAccountBalance.toString());
         window.localStorage.setItem('blockedAmount', response.finalUserBlockAmount.toString());
         window.localStorage.setItem('gameStatus', response.gameResult.toString());
         window.localStorage.setItem('rouletteResult', response.resultantNumber.toString());
+        window.localStorage.setItem('nullResponse', "false");
+        this.router.navigate(['result']);
+      } else {
+        window.localStorage.setItem('nullResponse', "true");
         this.router.navigate(['result']);
       }
     });
-  }
-
-  resetButton() {
-    this.count = 0;
-    this.isValidGame = true;
-    this.ele = 0;
-    this.type = 0;
-    this.resetForm();
-  }
-
-  resetButton2() {
-    this.count = 0;
-    this.isValidGame = true;
-    this.ele = 0;
-    this.type = 0;
-    this.resetForm();
-    // location.reload();
   }
 }
