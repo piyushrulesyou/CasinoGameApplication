@@ -13,19 +13,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+<link rel="stylesheet"
+	href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/UserList.css" />">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-
+<!-- <link rel="shortcut icon" -->
+<!-- 	href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico"> -->
 
 
 </head>
@@ -55,44 +58,48 @@
 
 	<c:if test="${listOfUsers.size() != 0}">
 
-		<table width="100%" class="w3-table-all w3-centered">
-			<tr>
-				<th>S.No.</th>
-				<th>Name</th>
-				<th>DOB</th>
-				<th>Contact</th>
-				<th>Email</th>
-				<th>Balance(in Rs.)</th>
-				<th>Blocked Amount</th>
-				<th>Recharge</th>
-			</tr>
-
-			<%-- 			<c:set var="count" value="0" scope="page" /> --%>
-
-			<c:forEach items="${listOfUsers}" var="eachUser">
-
+		<table width="100%" id="myTable" class="table table-striped "
+			cellspacing="0">
+			<thead>
 				<tr>
-					<td>${userCounter=userCounter+1}</td>
-					<%-- 					<c:set var="count" value="${count + 1}" scope="page" /> --%>
-					<%-- 					<td>${count}</td> --%>
-					<td>${eachUser.customerName}</td>
-					<td>${eachUser.dateOfBirth}</td>
-					<td>${eachUser.contactNumber}</td>
-					<td>${eachUser.emailID}</td>
-					<td>${eachUser.accountBalance}</td>
-					<td>${eachUser.blockedAmount}</td>
-					
-
-					<td><button
-							id="${eachUser.customerID}-${eachUser.customerName}"
-							type="button" data-toggle="modal" data-target="#modalID"
-							class="rechargeAmountButton">
-							<img class="plusLogo" alt="plusDatabaseIcon"
-								src="<c:url value="resources/Images/add.png" />">
-						</button></td>
-
+					<th class="th-sm">S.No.</th>
+					<th class="th-sm">Name</th>
+					<th class="th-sm">DOB</th>
+					<th class="th-sm">Contact</th>
+					<th class="th-sm">Email</th>
+					<th class="th-sm">Balance(in Rs.)</th>
+					<th class="th-sm">Blocked Amount</th>
+					<th class="th-sm">Recharge</th>
 				</tr>
-			</c:forEach>
+			</thead>
+			<tbody>
+				<%-- 			<c:set var="count" value="0" scope="page" /> --%>
+
+				<c:forEach items="${listOfUsers}" var="eachUser">
+
+					<tr>
+						<td>${userCounter=userCounter+1}</td>
+						<%-- 					<c:set var="count" value="${count + 1}" scope="page" /> --%>
+						<%-- 					<td>${count}</td> --%>
+						<td>${eachUser.customerName}</td>
+						<td>${eachUser.dateOfBirth}</td>
+						<td>${eachUser.contactNumber}</td>
+						<td>${eachUser.emailID}</td>
+						<td>${eachUser.accountBalance}</td>
+						<td>${eachUser.blockedAmount}</td>
+
+
+						<td><button
+								id="${eachUser.customerID}-${eachUser.customerName}"
+								type="button" data-toggle="modal" data-target="#modalID"
+								class="rechargeAmountButton">
+								<img class="plusLogo" alt="plusDatabaseIcon"
+									src="<c:url value="resources/Images/add.png" />">
+							</button></td>
+
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
 	</c:if>
 
@@ -134,7 +141,16 @@
 		</div>
 	</div>
 
-<script type="text/javascript" src="resources/js/UserList.js"></script>
+	<script type="text/javascript" src="resources/js/UserList.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#myTable').dataTable();
+		});
+	</script>
+	<script type="text/javascript"
+		src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
 
 </body>
 </html>

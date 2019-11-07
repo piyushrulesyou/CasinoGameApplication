@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 // import * as $ from 'jquery';
 import { UserBettingValue } from 'src/app/model/betting.model';
+import { GameResult } from '../../model/game_result.model';
 
 @Component({
   selector: 'app-play',
@@ -55,6 +56,7 @@ export class PlayComponent implements OnInit {
   // value = '';
   counter: number = 0;
   amount = 0;
+  gameResult: GameResult;
   betSegment = '';
   tempBalance = 0;
   isValidGame;
@@ -64,25 +66,6 @@ export class PlayComponent implements OnInit {
   ele: any;
   type: number;
 
-  // first12: number;
-  // second12: number;
-  // last12: number;
-  // zero: number;
-  // first18: number;
-  // last18: number;
-  // even: number;
-  // odd: number;
-
-  // callMe(event: MouseEvent) {
-  //   this.amount = parseInt((event.target as HTMLInputElement).value);
-  //   this.betSegment = (event.target as HTMLInputElement).name;
-
-  //   console.log(this.amount);
-  //   console.log(this.betSegment);
-
-  // }
-
-
   onSubmit() {
     // this.resetForm();
     console.log(this.count);
@@ -91,21 +74,6 @@ export class PlayComponent implements OnInit {
       this.generateResult(this.bettingForm);
     this.resetForm();
   }
-  // onSubmit(bettingForm: NgForm) {
-  //   this.resetForm();
-  //   console.log("Final " + this.amount);
-  //   console.log("Final " + this.betSegment);
-  //   // this.updateBalance(this.amount);
-  //   this.generateResult(bettingForm);
-  // }
-
-  // onNgSubmit(bettingForm: NgForm) {
-  //   this.resetForm();
-  //   console.log("Final " + this.amount);
-  //   console.log("Final " + this.betSegment);
-  //   // this.updateBalance(this.amount);
-  //   this.generateResult(bettingForm);
-  // }
 
   modalVerify() {
     this.verify();
@@ -152,25 +120,19 @@ export class PlayComponent implements OnInit {
   generateResult(bettingForm: UserBettingValue) {
     this.playingService.generateResult(this.customerID, this.ele, this.type).subscribe(response => {
       console.log(response);
-
-      if (response != null)
+      this.gameResult = response;
+      if (response != null) {
         window.localStorage.setItem('loginUserAccountBalance', response.finalUserAccountBalance.toString());
-      // else{
-      //   this.tempBalance = parseFloat(window.localStorage.getItem('loginUserAccountBalance')) + this.amount;
-      //   if (this.tempBalance >= 0) {
-      //     window.localStorage.setItem('loginUserAccountBalance', this.tempBalance.toString());
-      //   }
-
-      // }
-      this.router.navigate(['home']);
-
+        window.localStorage.setItem('blockedAmount', response.finalUserBlockAmount.toString());
+        window.localStorage.setItem('gameStatus', response.gameResult.toString());
+        window.localStorage.setItem('rouletteResult', response.resultantNumber.toString());
+        this.router.navigate(['result']);
+      }
     });
   }
 
   resetButton() {
-    // console.log(this.count);
     this.count = 0;
-    // console.log(this.count);
     this.isValidGame = true;
     this.ele = 0;
     this.type = 0;
@@ -178,9 +140,7 @@ export class PlayComponent implements OnInit {
   }
 
   resetButton2() {
-    // console.log("Piyush");
     this.count = 0;
-    // // console.log(this.count);
     this.isValidGame = true;
     this.ele = 0;
     this.type = 0;
