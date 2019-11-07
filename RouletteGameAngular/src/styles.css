@@ -6,6 +6,13 @@ input.ng-touched.ng-invalid{
     border-color: crimson;
 }
 
+
+/* body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background: url("assets/img/roulette_bg.jpg");
+} */
+
 div.validationError {
     width: 100%;
     margin-top: .25em;

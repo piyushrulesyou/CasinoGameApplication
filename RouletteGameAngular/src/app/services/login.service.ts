@@ -5,8 +5,8 @@ import { Observable, of } from "rxjs/index";
 import { UserLogin } from '../model/login_info.model';
 // import { Observable } from 'rxjs';
 import { ValidateUser } from '../model/validate_user.model';
-import { ApiResponse } from '../model/api_response.model';
-import { HomeComponent } from '../users/home/home.component';
+// import { ApiResponse } from '../model/api_response.model';
+// import { HomeComponent } from '../users/home/home.component';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,6 @@ export class LoginService {
   deleteToken() {
     window.localStorage.removeItem('loginUserName');
     window.localStorage.removeItem('loginUserAccountBalance');
-    // this.home.afterLogout();
+    window.localStorage.removeItem('loginUserID');
   }
-
 }

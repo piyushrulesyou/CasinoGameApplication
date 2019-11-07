@@ -1,1 +1,154 @@
-<p>play works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img class="roulette_board" alt="roulette_board" src="../../../assets/img/roulette_board.png">
+        </div>
+        <div class="col-sm">
+            <table>
+                <tr>{{customerName}}</tr>
+                <tr>{{accountBalance}}</tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!-- <form #form="ngForm" (ngSubmit)='onNgSubmit(form)' autocomplete="off"> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">1st 12</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="first12" #first12="ngModel"
+                    [(ngModel)]="bettingForm.first12" step="500" onkeydown="return false">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">2nd 12</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="second12" #second12="ngModel"
+                    [(ngModel)]="bettingForm.second12" step="500" onkeydown="return false">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">3rd 12</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="last12" #last12="ngModel"
+                    [(ngModel)]="bettingForm.last12" step="500" onkeydown="return false">
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4"> 0 </label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="zero" #zero="ngModel"
+                    [(ngModel)]="bettingForm.zero" step="500" onkeydown="return false">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">1 to 18</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="first18" #first18="ngModel"
+                    [(ngModel)]="bettingForm.first18" step="500" onkeydown="return false">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">19 to 36</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="bet" name="last18" #last18="ngModel"
+                    [(ngModel)]="bettingForm.last18" step="500" onkeydown="return false">
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">Even</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="betEven" name="even" #even="ngModel"
+                    [(ngModel)]="bettingForm.even" step="500" onkeydown="
+                        return false">
+            </div>
+        </div>{{bettingForm.even}}
+        <div class="form-group">
+            <div class="col-sm">
+                <label class="control-label col-sm-4">Odd</label>
+                <input class="sizeSmall" type="number" min="0" value="0" id="betOdd" name="odd" #odd="ngModel"
+                    [(ngModel)]="bettingForm.odd" step="500" onkeydown="return false">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm">
+                <div class="row">
+                    <button class="col-sm" (click)="resetButton()">Reset</button>
+                    <!-- <button type="submit" class="col-sm">Submit</button> -->
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"
+                        (click)="modalVerify()">
+                        Play
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" *ngIf="isValidGame">
+                <h5 class="modal-title" id="exampleModalLongTitle">Try Your Luck</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-header" *ngIf="!isValidGame">
+                <h5 class="modal-title" id="exampleModalLongTitle">Error!!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="modal-body" *ngIf="isValidGame">
+                Are you sure you want to try your luck with your current selections ?
+            </div>
+
+            <div class="modal-body" *ngIf="!isValidGame">
+                You can only bet on one segment at once, Please try again !!
+            </div>
+
+
+            <div class="modal-footer" *ngIf="isValidGame">
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="submit" (click)="onSubmit()" class="btn btn-primary" data-dismiss="modal">Sure!!</button>
+            </div>
+            <div class="modal-footer" *ngIf="!isValidGame">
+                <button type="button" class="btn btn-secondary" (click)="resetButton2()" data-dismiss="modal">Try
+                    Again!!</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- </form> -->

@@ -1,4 +1,5 @@
 export class ValidateUser {
-    customerName: String;
+    customerID: string;
+    customerName: string;
     accountBalance: number;
 }

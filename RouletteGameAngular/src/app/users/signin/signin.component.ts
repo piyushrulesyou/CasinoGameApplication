@@ -16,13 +16,14 @@ export class SigninComponent implements OnInit {
     this.resetForm();
     window.localStorage.removeItem('loginUserName');
     window.localStorage.removeItem('loginUserAccount');
+    window.localStorage.removeItem('loginUserID')
   }
   resetForm(loginForm?: NgForm) {
     if (loginForm != null)
       loginForm.resetForm();
 
     this.loginService.loginFormData = {
-      customerID: ''
+      customerID: 'sdf68198sdf7'
     }
   }
 
@@ -42,6 +43,7 @@ export class SigninComponent implements OnInit {
       else {
         window.localStorage.setItem('loginUserName', response.customerName.toString());
         window.localStorage.setItem('loginUserAccountBalance', response.accountBalance.toString());
+        window.localStorage.setItem('loginUserID', response.customerID.toString());
 
         this.router.navigate(['home']);
       }

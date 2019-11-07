@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { PlayingService } from '../services/playing.service';
 
 @Component({
   selector: 'nag-users',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private playingService: PlayingService, private router: Router) { }
 
   ngOnInit() {
     if (!window.localStorage.getItem('loginUserName')) {
@@ -18,7 +19,7 @@ export class UsersComponent implements OnInit {
   }
 
   customerName: string = window.localStorage.getItem('loginUserName');
-  accountBalance: string = window.localStorage.getItem('loginUserAccountBalance');
+  accountBalance: number = parseFloat(window.localStorage.getItem('loginUserAccountBalance'));
 
   onLogout() {
     this.loginService.deleteToken();

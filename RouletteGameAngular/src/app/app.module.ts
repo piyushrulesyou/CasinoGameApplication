@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { SigninComponent } from './users/signin/signin.component';
 import { HomeComponent } from './users/home/home.component';
 import { LoginService } from './services/login.service';
+import { PlayingService } from './services/playing.service';
 
 import { routing } from "../app/app.routing";
 import { PlayComponent } from './users/play/play.component';
@@ -27,7 +28,7 @@ import { PlayComponent } from './users/play/play.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, PlayingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
