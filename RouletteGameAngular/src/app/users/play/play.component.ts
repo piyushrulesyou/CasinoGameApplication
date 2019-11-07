@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { PlayingService } from '../../services/playing.service';
 import { Router } from '@angular/router';
 
-// import * as $ from 'jquery';
+
 import { UserBettingValue } from 'src/app/model/betting.model';
 import { GameResult } from '../../model/game_result.model';
 

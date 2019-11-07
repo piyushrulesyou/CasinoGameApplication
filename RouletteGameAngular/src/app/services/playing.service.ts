@@ -3,15 +3,16 @@ import { UserBettingValue } from '../model/betting.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/index';
 import { GameResult } from '../model/game_result.model';
+import { playingUri } from '../constants/uri';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayingService {
 
-  private readonly gamePlayURI = "http://localhost:8080/RouletteAPI/webapi/play/playGame";
+  private readonly gamePlayURI = playingUri;
 
-  bettingForm: UserBettingValue;
+  // bettingForm: UserBettingValue;
 
   constructor(private httpClient: HttpClient) { }
 

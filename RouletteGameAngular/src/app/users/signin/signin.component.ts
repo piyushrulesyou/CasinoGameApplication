@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { NgForm } from '@angular/forms';
+import { UserLogin } from 'src/app/model/login_info.model';
 
 @Component({
   selector: 'nag-signin',
@@ -9,6 +10,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
+
+  loginFormData: UserLogin;
 
   constructor(public loginService: LoginService, private router: Router) { }
 
@@ -18,12 +21,14 @@ export class SigninComponent implements OnInit {
     window.localStorage.removeItem('loginUserAccount');
     window.localStorage.removeItem('loginUserID')
   }
+
   resetForm(loginForm?: NgForm) {
+
     if (loginForm != null)
       loginForm.resetForm();
 
-    this.loginService.loginFormData = {
-      customerID: 'sdf68198sdf7'
+    this.loginFormData = {
+      customerID: ''
     }
   }
 
@@ -32,6 +37,7 @@ export class SigninComponent implements OnInit {
   }
 
   isInvalidUser: boolean = false;
+  customerID: string;
 
   validateUser(loginForm: NgForm) {
     this.loginService.validateUser(loginForm.value).subscribe(response => {
@@ -43,7 +49,7 @@ export class SigninComponent implements OnInit {
       else {
         window.localStorage.setItem('loginUserName', response.customerName.toString());
         window.localStorage.setItem('loginUserAccountBalance', response.accountBalance.toString());
-        window.localStorage.setItem('loginUserID', response.customerID.toString());
+        window.localStorage.setItem('loginUserID', response.customerID);
 
         this.router.navigate(['home']);
       }

@@ -7,15 +7,17 @@ import { UserLogin } from '../model/login_info.model';
 import { ValidateUser } from '../model/validate_user.model';
 // import { ApiResponse } from '../model/api_response.model';
 // import { HomeComponent } from '../users/home/home.component';
+import { loginUri } from '../constants/uri';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private readonly loginURI = "http://localhost:8080/RouletteAPI/webapi/validate/validateUser";
+  // private readonly loginURI = "http://localhost:8080/RouletteAPI/webapi/validate/validateUser";
+  private readonly loginURI = loginUri;
 
-  loginFormData: UserLogin;
+  
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,9 +25,5 @@ export class LoginService {
     return this.httpClient.get<ValidateUser>(this.loginURI + '/' + loginFormData.customerID);
   };
 
-  deleteToken() {
-    window.localStorage.removeItem('loginUserName');
-    window.localStorage.removeItem('loginUserAccountBalance');
-    window.localStorage.removeItem('loginUserID');
-  }
+
 }

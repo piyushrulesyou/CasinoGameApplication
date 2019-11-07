@@ -1,8 +1,10 @@
 <form #form="ngForm" (submit)=onSubmit(form) autocomplete="off">
     <div class="form-group">
         <label>Enter Unique User ID (sdf68198sdf7)</label>
-        <input name="customerID" #customerID="ngModel" [(ngModel)]="loginService.loginFormData.customerID"
+
+        <input type="text" name="customerID" #customerID="ngModel" [(ngModel)]="loginFormData.customerID"
             class="form-control" required>
+
     </div>
 
     <div class="validationError" *ngIf="customerID.invalid && customerID.touched">

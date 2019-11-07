@@ -26,5 +26,5 @@ export class HomeComponent implements OnInit {
   }
   customerName: string = window.localStorage.getItem('loginUserName');
   accountBalance: string = window.localStorage.getItem('loginUserAccountBalance');
-
+  customerID: string = window.localStorage.getItem('loginUserID');
 }
