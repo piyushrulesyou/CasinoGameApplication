@@ -1,5 +1,8 @@
 package com.nagarro.adminPanel.controller;
 
+import java.sql.Blob;
+
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,12 +11,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nagarro.adminPanel.model.CustomerDetails;
 import com.nagarro.adminPanel.services.UserRegistrationServices;
 import com.nagarro.adminPanel.utilities.AgeCalculator;
+import com.nagarro.adminPanel.utilities.ConvertImageToBlob;
 import com.nagarro.adminPanel.utilities.GenerateRandomID;
+
+//@MultipartConfig(
+//		maxFileSize = 1024 * 1024 * 1, // 1 MB
+//		maxRequestSize = 1024 * 1024 * 10 // 10 MB
+//)
 
 @Controller
 public class UserRegistrationController {
@@ -40,6 +52,8 @@ public class UserRegistrationController {
 		String contactNumber = userInformation.getContactNumber();
 		String customerName = userInformation.getCustomerName();
 
+		System.out.println("con");
+		
 		boolean is18Above = AgeCalculator.isValidAge(dateOfBirth);
 
 		ModelAndView modelAndView = null;
@@ -50,6 +64,10 @@ public class UserRegistrationController {
 			return modelAndView;
 
 		}
+		
+//		CommonsMultipartFile idProof = null;
+		
+//		Blob idProofBlob = ConvertImageToBlob.convertImageToBlob(idProof);
 
 		String customerID = GenerateRandomID.generateID(emailID, contactNumber, customerName);
 

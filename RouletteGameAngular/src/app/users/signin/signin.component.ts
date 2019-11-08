@@ -28,7 +28,7 @@ export class SigninComponent implements OnInit {
       loginForm.resetForm();
 
     this.loginFormData = {
-      customerID: ''
+      customerID: 'sdf68198sdf7'
     }
   }
 

@@ -1,5 +1,7 @@
 package com.nagarro.adminPanel.model;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,11 +12,21 @@ public class CustomerDetails {
 
 	@Id
 	private String customerID;
+
 	private String customerName;
 	private String dateOfBirth;
 	private String contactNumber;
 	private String emailID;
-//	private String idProof;
+//	private Blob idProof;
+//
+//	public Blob getIdProof() {
+//		return idProof;
+//	}
+//
+//	public void setIdProof(Blob idProof) {
+//		this.idProof = idProof;
+//	}
+
 	private double accountBalance;
 	private double blockedAmount;
 
@@ -57,14 +69,6 @@ public class CustomerDetails {
 	public void setEmailID(String emailID) {
 		this.emailID = emailID;
 	}
-
-//	public String getIdProof() {
-//		return idProof;
-//	}
-//
-//	public void setIdProof(String idProof) {
-//		this.idProof = idProof;
-//	}
 
 	public double getAccountBalance() {
 		return accountBalance;

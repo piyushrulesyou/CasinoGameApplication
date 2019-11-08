@@ -14,12 +14,7 @@ import { GameResult } from '../../model/game_result.model';
 })
 export class PlayComponent {
 
-  // refresh = false;
-  // generatedNum;
-  // winResponse: boolean;
-  // balance: number;
-
-  error: string = null;
+  zeroSelectedError: string = null;
   insufficientBalError: string = null;
 
   valueZero: number[] = new Array(9).fill(0);
@@ -58,7 +53,7 @@ export class PlayComponent {
     let inputValue = parseInt((event.target as HTMLInputElement).value);
     let id = parseInt((event.target as HTMLInputElement).id);
 
-    let temp = this.valueZero[id];
+    let temp = this.valueZero[id] - 500;
 
     this.valueZero.fill(0);
     if (this.accountBalance > inputValue) {
@@ -88,25 +83,19 @@ export class PlayComponent {
 
     if (gameCase != -1) {
       this.generateResult();
+      this.router.navigate(["result"]);
     }
     else {
-      this.error = "Please do betting on any one of them."
+      this.zeroSelectedError = "Please select atleast one category for playing."
     }
-
   }
-
 
   resetButton() {
     let gameCase = this.valueZero.findIndex(c => c != 0);
-    // if (gameCase != -1)
-    location.reload();
-  }
+    this.zeroSelectedError = null;
+    if (gameCase != -1)
+      location.reload();
 
-
-  resetButton2() {
-    let gameCase = this.valueZero.findIndex(c => c != 0);
-    // if (gameCase != -1)
-    location.reload();
   }
 
   generateResult() {

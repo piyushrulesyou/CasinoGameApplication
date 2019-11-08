@@ -31,6 +31,8 @@ export class ResultComponent implements OnInit {
 
   nullResponse = window.localStorage.getItem('nullResponse');
 
-
+  playAgain(){
+    this.router.navigate(['play']);
+  }
 
 }

@@ -6,3 +6,12 @@
 .sizeSmall{
     width: 30%;
 }
+
+.roulette_board{
+    height: 520px;
+    width: 30%;
+}
+
+.selectionPanel{
+    width: 50%;
+}

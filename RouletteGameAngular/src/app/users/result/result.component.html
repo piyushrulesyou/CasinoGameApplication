@@ -1,9 +1,68 @@
-<div *ngIf="nullResponse==='true'">
-    Something went wrong!!
-</div>
-<div *ngIf="nullResponse==='false'">
-    <h1>Account Balance: {{accountBalance}}</h1>
-    <h1>Blocked Amount: {{blockedAmount}}</h1>
-    <h1>Roulette Request: {{rouletteResult}}</h1>
-    <h1>Status: {{winOrLose}}</h1>
+<div class="row text-center no-gutters">
+    <div class="col">
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+        Area 1<br>
+
+    </div>
+    <div class="col">
+        <div class="col">
+            <br>
+            <h3 class="glow" style="margin-top: 10%;">Game Result is Ready....</h3>
+            <br><br><br><br><br><br><br>
+        </div>
+        <div class="col">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Show Result
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" *ngIf="winOrLose === 'true'">
+                            <h5 class="col-12 modal-title text-center" id="exampleModalLabel">CONGRATULATIONS!!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-header" *ngIf="winOrLose === 'false'">
+                            <h5 class=" col-12 modal-title text-center" id="exampleModalLabel">Better Luck Next Time!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" *ngIf="winOrLose === 'true'">
+                            <img src="../../../assets/img/casino_win.png" class="casino_status" alt="casino_win">
+
+                            <h5><strong>Output Number: {{rouletteResult}} </strong></h5>
+                            <h5>FinalAccountBalance: {{accountBalance}}</h5>
+                        </div>
+                        <div class="modal-body" *ngIf="winOrLose === 'false'">
+                            <img src="../../../assets/img/casino_loss.png" class="casino_status" alt="casino_loss">
+
+                            <h5><strong>Output Number: {{rouletteResult}} </strong></h5>
+                            <h5>FinalAccountBalance: {{accountBalance}}</h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" (click)="playAgain()" class="btn btn-primary">Play Again!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

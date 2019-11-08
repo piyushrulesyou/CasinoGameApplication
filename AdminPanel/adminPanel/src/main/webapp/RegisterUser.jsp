@@ -22,18 +22,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script>
-	$(function() {
-		$("#datepicker").datepicker();
-	});
-	$.datepicker.setDefaults({
-		changeMonth : "true",
-		changeYear : "true",
-		yearRange : "-72:+38",
-		showButtonPanel : "true"
-	});
-</script>
-
 </head>
 <body>
 
@@ -92,11 +80,11 @@
 				</tr>
 
 
-				<!-- <tr>
+				<tr>
 					<td>Identity Proof:</td>
 					<td><input type="file" id="idProof" name="idProof"
 						accept="image/*" placeholder="ID Proof"></td>
-				</tr> -->
+				</tr>
 
 			</table>
 

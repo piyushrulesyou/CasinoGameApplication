@@ -1,24 +1,125 @@
-<h1>Customer ID:{{customerID}}</h1>
-<h1>Customer Name:{{customerName}}</h1>
-<h1>Account Balance:{{accountBalance}}</h1>
+<h1 class="roullte_text">Welcome To CasinoLand</h1>
+<h1 class="roullte_text_large">Let's Gamble!!</h1>
+<br>
+<div class="row">
+
+    <!-- <div class="col-9"> -->
+    <!-- <div class="col-12 text-center"> -->
+    <!-- <div class=" card-header ">
+            <strong> What is Roulette? </strong>
+        </div> -->
+    <!-- </div> -->
+    <!-- <img src="../../../assets/img/casino-login.png" class="card-img-top card_img" alt="IMG"> -->
+    <!-- <div class="card-body"> -->
+
+    <!--  -->
+    <!-- </div> -->
+
+    <!-- </div> -->
+    <!-- <div class="col float-right"> -->
+    <div class="card col-12 text-center row">
+        <h3>Welcome {{customerName}}</h3>
+        <!-- <h6>Customer ID:{{customerID}}</h6> -->
+        <!-- <h6>Customer Name:{{customerName}}</h6> -->
+        <h6>Your Account Balance:{{accountBalance}}</h6>
+    </div>
+
+    <button type="button" class="btn btn-primary rules_button text-center" data-toggle="modal"
+        data-target="#exampleModalLong" style="margin-left: auto; margin-right: auto; margin-top: 50px;">
+        About Us
+    </button>
+    <!-- <div class=" col-12 text-center row card">
+            <img src="../../../assets/img/user.png" class="user_icon">
+
+        </div> -->
+    <!-- </div> -->
+</div>
+
+
+<!-- Button trigger modal -->
+
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">What is Roulette?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <p>Roulette is a casino game named after the French word meaning little wheel. In the game, players may
+                    choose
+                    to place bets on either a single number, various groupings of numbers, the colors red or black,
+                    whether the
+                    number is odd or even, or if the numbers are high (19–36) or low (1–18). To determine the winning
+                    number and
+                    color, a croupier spins a wheel in one direction, then spins a ball in the opposite direction around
+                    a
+                    tilted circular track running around the outer edge of the wheel. The ball eventually loses
+                    momentum, passes
+                    through an area of deflectors, and falls onto the wheel and into one of 37 (single zero
+                    French/European
+                    style roulette) or 38 (double zero American style roulette) colored and numbered pockets on the
+                    wheel. The
+                    winnings are then paid to anyone who has placed a successful bet.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Betting option</th>
+                            <th scope="col">Winning Return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1st 12</th>
+                            <td>1.5 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2nd 12</th>
+                            <td>1.5 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3rd 12</th>
+                            <td>1.5 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">0</th>
+                            <td>10 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">1 to 18</th>
+                            <td>1.25 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">19 to 36</th>
+                            <td>1.25 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Even</th>
+                            <td>1.25 times of bet amount</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Odd</th>
+                            <td>1.25 times of bet amount</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
             </div>
         </div>
     </div>
