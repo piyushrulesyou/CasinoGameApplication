@@ -24,12 +24,9 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/UserList.css" />">
-
-<!-- <link rel="shortcut icon" -->
-<!-- 	href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico"> -->
-
 
 </head>
 <body>

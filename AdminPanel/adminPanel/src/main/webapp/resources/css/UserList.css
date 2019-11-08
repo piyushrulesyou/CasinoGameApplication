@@ -15,3 +15,10 @@
 	height: 35px;
 	width: 35px;
 }
+
+.bodybg {
+/* 	background: */
+/* 		url("https://cmsstorage.rationalcdn.com/assets/psc/assets/common/images/games/roulette/thumb.jpg"); */
+	background-repeat: no-repeat;
+	background-size: 100%;
+}

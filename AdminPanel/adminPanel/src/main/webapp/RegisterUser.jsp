@@ -24,6 +24,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/UserList.css" />">
+
+
 </head>
 <body>
 
@@ -40,9 +44,6 @@
 			<table class="table">
 
 				<tr>
-					<!-- 					<td>Name:</td> -->
-					<!-- 					<td><input type="text" id="customerName" name="customerName" -->
-					<!-- 						placeholder="Enter name" value="sdfhs" required="required"></td> -->
 					<spring:bind path="customerName">
 						<td><form:label path="customerName">Name: </form:label></td>
 						<td><form:input type="text" path="customerName"
@@ -52,9 +53,6 @@
 
 
 				<tr>
-					<!-- 					<td>Date of Birth:</td> -->
-					<!-- 					<td><input type="date" name="dateOfBirth" id="dateOfBirth" -->
-					<!-- 						placeholder="Enter DOB" required="required"></td> -->
 					<spring:bind path="dateOfBirth">
 						<td><form:label path="dateOfBirth">Date of Birth: </form:label></td>
 						<td><form:input type="date" path="dateOfBirth"
@@ -63,10 +61,6 @@
 				</tr>
 
 				<tr>
-					<!-- 					<td>Contact:</td> -->
-					<!-- 					<td><input type="number" name="contactNumber" -->
-					<!-- 						id="contactNumber" placeholder="Enter Contact Number" value=897899 -->
-					<!-- 						required="required"></td> -->
 					<spring:bind path="contactNumber">
 						<td><form:label path="contactNumber">Contact: </form:label></td>
 						<td><form:input type="number" path="contactNumber"
@@ -75,10 +69,6 @@
 				</tr>
 
 				<tr>
-					<!-- 					<td>Email ID:</td> -->
-					<!-- 					<td><input type="email" id="emailID" name="emailID" -->
-					<!-- 						placeholder="Enter email" value="sdfhs@gmail.com" -->
-					<!-- 						required="required"></td> -->
 					<spring:bind path="emailID">
 						<td><form:label path="emailID">Email ID: </form:label></td>
 						<td><form:input type="email" path="emailID"

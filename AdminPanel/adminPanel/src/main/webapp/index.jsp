@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin HomePage</title>
+<title>AdminHomePage</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,10 +20,14 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<!-- 	background="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/collection-of-las-vegas-casino-chips-1-aloha-art.jpg"> -->
 
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/UserList.css" />">
+
+
+</head>
+<body style="background-repeat: no-repeat; background-size: 100%;"
+	background="<c:url value="/resources/Images/casinoBG.jpg" />">
 
 	<c:if test="${successMessage != null}">
 		<div class="alert alert-success">
@@ -32,11 +36,7 @@
 		</div>
 	</c:if>
 
-
-
 	<jsp:include page="WEB-INF/NavigationBar.jsp"></jsp:include>
-
-
 
 </body>
 </html>

@@ -1,25 +1,13 @@
 <div class="row text-center no-gutters">
     <div class="col-8">
-        <!-- <div class="row-sm"> -->
+
         <img class="roulette_board" alt="roulette_board" src="../../../assets/img/roulette_board.png">
-        <!-- </div> -->
+
     </div>
     <div class="col card selectionPanel">
-        <!-- <div class="row">
-            <div class="col-sm"></div>
-            <div class="card col-sm">
-                <table>
-                    <tr>{{customerName}}</tr>
-                    <tr>{{accountBalance}}</tr>
-                </table>
-            </div>
-            <div class="col-sm"></div>
-        </div> -->
 
         <div class="col-sm"></div>
 
-        <!-- <br> -->
-        <!-- <div class="col card"> -->
 
         <div class="alert alert-success" *ngIf="insufficientBalError==null">Place your bet!!</div>
         <div class="alert alert-danger" role="alert" *ngIf="insufficientBalError!=null">
@@ -27,8 +15,7 @@
         </div>
 
 
-        <!-- <div class="container"> -->
-        <!-- <div class="row"> -->
+
         <div class="form-group">
             <div class="col-sm">
                 <label class="control-label col-sm-4">1st 12</label>
@@ -52,13 +39,7 @@
                     onkeydown="return false" [(ngModel)]="valueZero[3]" (mouseup)="callMe($event)">
             </div>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
 
-        <!-- <br> -->
-
-        <!-- <div class="container">
-            <div class="row"> -->
         <div class="form-group">
             <div class="col-sm">
                 <label class="control-label col-sm-4"> 0 </label>
@@ -80,12 +61,8 @@
                     onkeydown="return false" [(ngModel)]="valueZero[6]" (mouseup)="callMe($event)">
             </div>
         </div>
-        <!-- </div>
-        </div> -->
-        <!-- <br> -->
 
-        <!-- <div class="container">
-            <div class="row"> -->
+
         <div class="form-group">
             <div class="col-sm">
                 <label class="control-label col-sm-4">Even</label>
@@ -103,15 +80,13 @@
         <div class="form-group">
             <div class="col-sm">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                <button type="button" class="btn btn-lg btn-block bg-dark" data-toggle="modal"
+                    data-target="#exampleModalLong">
                     Play
                 </button>
 
             </div>
         </div>
-        <!-- </div>
-        </div> -->
-        <!-- </div> -->
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"

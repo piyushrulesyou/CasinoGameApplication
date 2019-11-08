@@ -8,22 +8,22 @@
 <meta charset="ISO-8859-1">
 <title>NavBar</title>
 
-<link rel="stylesheet" 
-      href="<c:url value="/resources/css/NavBar.css" />" >
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/NavBar.css" />">
 
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<!-- 	<nav class="navbar navbar-expand-sm navbar-light bg-faded"> -->
-		<a class="navbar-brand" href="index.jsp"> 
-		<img class="casinoLogo" alt="casinoLogo" src="<c:url value="resources/Images/casinoLogo.png" />">
+		<a class="navbar-brand" href="index.jsp"> <img class="casinoLogo"
+			alt="casinoLogo"
+			src="<c:url value="resources/Images/casinoLogo.png" />">
 		</a>
-		
+
 		<!-- Links -->
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="register">Register</a></li>
-			<li class="nav-item"><a class="nav-link active" href="showUsers">User
+			<li class="nav-item"><a class="nav-link" href="showUsers">User
 					List</a></li>
 		</ul>
 		<ul class="navbar-nav">
