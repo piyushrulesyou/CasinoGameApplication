@@ -5,6 +5,12 @@ import java.time.format.DateTimeFormatter;
 
 import com.nagarro.adminPanel.constants.Constants;
 
+/**
+ * This class converts the date in string format to LocalDate format.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class DateParser {
 //	final static Logger LOG = Logger.getLogger(DateParser.class);
 

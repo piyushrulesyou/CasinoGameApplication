@@ -1,5 +1,12 @@
 package com.nagarro.adminPanel.dto;
 
+/**
+ * /** This class is used for sending response of login Request. Success
+ * property determines whether the login was successful or not.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class LoginServicesDTO {
 
 	private String customerID;
