@@ -1,5 +1,12 @@
 package com.nagarro.RouletteAPI.dto;
 
+/**
+ * This class contains the final account balance after the roulette game has
+ * been played. This final is to be updated in the database.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class UpdatedFinalAmountDTO {
 
 	private double finalAmountBalance;

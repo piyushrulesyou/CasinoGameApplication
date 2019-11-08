@@ -1,5 +1,12 @@
 package com.nagarro.RouletteAPI.dto;
 
+/**
+ * This class contains the information which will be used after blocking the
+ * user bet amount in the database.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class BlockAmountDTO {
 
 	private boolean isValidGame;

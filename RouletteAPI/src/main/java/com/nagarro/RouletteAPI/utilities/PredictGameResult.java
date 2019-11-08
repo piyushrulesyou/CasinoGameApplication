@@ -2,6 +2,14 @@ package com.nagarro.RouletteAPI.utilities;
 
 public class PredictGameResult {
 
+	/**
+	 * This method evaluates the game result based on the user selection and the
+	 * random number selected.
+	 * 
+	 * @param numberChosen
+	 * @param rouletteSpinResult
+	 * @return
+	 */
 	public static boolean isGameWon(int numberChosen, int rouletteSpinResult) {
 
 		boolean gameResult = false;

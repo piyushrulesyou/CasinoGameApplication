@@ -2,6 +2,11 @@ package com.nagarro.RouletteAPI.utilities;
 
 public class RandomNumberGenerator {
 
+	/**
+	 * This function generates the random number as the roulette result.
+	 * 
+	 * @return
+	 */
 	public static int randomNumberGenerator() {
 
 		int randomNumber = (int) (Math.random() * 10000);

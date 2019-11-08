@@ -1,5 +1,13 @@
 package com.nagarro.RouletteAPI.dto;
 
+/**
+ * This class contains the information about the result of the game after the
+ * random number is generated and compared to the user selected segment.
+ * 
+ * @author piyushagarwal01
+ *
+ */
+
 public class GameResultDTO {
 
 	private boolean gameResult;

@@ -17,6 +17,13 @@ import com.nagarro.RouletteAPI.services.BlockAmountServices;
 import com.nagarro.RouletteAPI.services.GamePlayingServices;
 import com.nagarro.RouletteAPI.services.UpdateUserAccountInDBServices;
 
+/**
+ * This class is used by the Roulette Game for playing the game and generating
+ * the final result.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 @Path("play")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -30,6 +37,18 @@ public class GamePlayingController {
 
 	@Autowired
 	UpdateUserAccountInDBServices updateUserAccountInDBServices;
+
+	/**
+	 * Method handling HTTP GET requests for
+	 * playGame/{customerID}/{blockAmount}/{segmentChosen}. This method calls
+	 * RouletteService's play method to place bets and process the results of
+	 * customer with customerId as the one received in request URL.
+	 *
+	 * @param customerID
+	 * @param blockAmount
+	 * @param segmentChosen
+	 * @return PlayResponse that will be returned as a application/json response.
+	 */
 
 	@GET
 	@Path("playGame/{customerID}/{blockAmount}/{segmentChosen}")

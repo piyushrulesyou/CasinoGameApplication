@@ -1,5 +1,12 @@
 package com.nagarro.RouletteAPI.dto;
 
+/**
+ * This class contains the user information after the user has logged into the
+ * system.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class LoginServicesDTO {
 
 	private String customerName;

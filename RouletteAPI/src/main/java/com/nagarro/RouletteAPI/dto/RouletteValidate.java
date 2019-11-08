@@ -1,5 +1,12 @@
 package com.nagarro.RouletteAPI.dto;
 
+/**
+ * This class is used for validating the identity of the customer before the
+ * customer can play the roulette game.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 public class RouletteValidate {
 
 	private String customerID;

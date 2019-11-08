@@ -16,6 +16,13 @@ import com.nagarro.RouletteAPI.services.ValidateUserServices;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+/**
+ * This class returns the details of the user after validating the identity of
+ * the user.
+ * 
+ * @author piyushagarwal01
+ *
+ */
 @Path("validate")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -27,6 +34,15 @@ public class ValidateUserController {
 	WebResource webResource;
 	ObjectMapper mapper = new ObjectMapper();
 
+	/**
+	 * Method handling HTTP GET requests for /customer/{customerId}. This method
+	 * calls RouletteService's getCustomer method to get the details of customer
+	 * with customerId as the one received in request URL.
+	 *
+	 * @param customerID
+	 * @return CustomerResponse that will be returned as a application/json
+	 *         response.
+	 */
 	@GET
 	@Path("validateUser/{customerID}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })

@@ -2,6 +2,14 @@ package com.nagarro.RouletteAPI.utilities;
 
 public class CalculateFinalWonAmount {
 
+	/**
+	 * This method calculates the amount the user has won or lose after the random
+	 * number is generated based on the user selected segment.
+	 * 
+	 * @param blockAmount
+	 * @param numberChosen
+	 * @return The final amount the user has won or lose.
+	 */
 	public static double calculateFinalWonAmount(double blockAmount, int numberChosen) {
 
 		switch (numberChosen) {

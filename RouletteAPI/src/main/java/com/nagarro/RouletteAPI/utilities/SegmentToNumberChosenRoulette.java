@@ -2,6 +2,13 @@ package com.nagarro.RouletteAPI.utilities;
 
 public class SegmentToNumberChosenRoulette {
 
+	/**
+	 * This method converts the user selected segement to the number to be compared
+	 * to the roulette generated number.
+	 * 
+	 * @param segmentChosen
+	 * @return
+	 */
 	public static int convertSegmentToNumber(String segmentChosen) {
 
 		if (("first12").equalsIgnoreCase(segmentChosen))
