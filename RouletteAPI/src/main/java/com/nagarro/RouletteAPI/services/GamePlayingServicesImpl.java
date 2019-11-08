@@ -1,5 +1,6 @@
 package com.nagarro.RouletteAPI.services;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.nagarro.RouletteAPI.dto.GameResultDTO;
@@ -10,7 +11,12 @@ import com.nagarro.RouletteAPI.utilities.RandomNumberGenerator;
 @Service
 public class GamePlayingServicesImpl implements GamePlayingServices {
 
+	final static Logger LOG = Logger.getLogger(GamePlayingServicesImpl.class);
+
 	public GameResultDTO calculateGameResult(double blockAmount, int numberChosen) {
+
+		LOG.info(
+				"Inside service for calculating the game result based on the generated number and user chosen segment");
 
 		GameResultDTO gameResultDTO = new GameResultDTO();
 

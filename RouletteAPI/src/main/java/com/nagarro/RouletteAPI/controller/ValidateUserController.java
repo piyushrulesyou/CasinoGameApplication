@@ -7,6 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,8 @@ import com.sun.jersey.api.client.WebResource;
 @RestController
 public class ValidateUserController {
 
+	final static Logger LOG = Logger.getLogger(ValidateUserController.class);
+
 	@Autowired
 	ValidateUserServices validateUserServices;
 
@@ -47,6 +50,8 @@ public class ValidateUserController {
 	@Path("validateUser/{customerID}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response validateUserAndGetUserDetails(@PathParam("customerID") String customerID) {
+
+		LOG.info("Inside component for validating the user info.");
 
 		webResource = validateUserServices.validateUserAndGetUserDetails(customerID);
 

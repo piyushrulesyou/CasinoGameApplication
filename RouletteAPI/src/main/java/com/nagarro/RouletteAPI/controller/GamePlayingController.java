@@ -7,6 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,8 @@ import com.nagarro.RouletteAPI.services.UpdateUserAccountInDBServices;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class GamePlayingController {
+
+	final static Logger LOG = Logger.getLogger(GamePlayingController.class);
 
 	@Autowired
 	BlockAmountServices blockAmountServices;
@@ -56,11 +59,15 @@ public class GamePlayingController {
 	public Response blockUserAmount(@PathParam("customerID") String customerID,
 			@PathParam("blockAmount") double blockAmount, @PathParam("segmentChosen") int segmentChosen) {
 
+		LOG.info("Inside controller for playing game with url playGame/{customerID}/{blockAmount}/{segmentChosen}");
+
 		GameResultDTO gameResultDTO = null;
 
 		BlockAmountDTO isEligibleCustomer = blockAmountServices.isValidGameAndBlockAmount(customerID, blockAmount);
 
 		if (isEligibleCustomer.getIsValidGame()) {
+
+			LOG.info("Eligible customer found with customerID " + customerID);
 
 			gameResultDTO = gamePlayingServices.calculateGameResult(blockAmount, segmentChosen);
 
@@ -69,6 +76,8 @@ public class GamePlayingController {
 
 			gameResultDTO.setFinalUserAccountBalance(finalUserAccountBalance);
 
+			LOG.info("Final user account balance is set to " + finalUserAccountBalance);
+
 			return Response.status(200).header("Access-Control-Allow-Origin", "*")
 					.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
 					.header("Access-Control-Allow-Credentials", "true")
@@ -76,6 +85,9 @@ public class GamePlayingController {
 					.header("Access-Control-Max-Age", "1209600").entity(gameResultDTO).build();
 
 		} else {
+
+			LOG.error("User not eligible to play the game.");
+
 			return null;
 		}
 
