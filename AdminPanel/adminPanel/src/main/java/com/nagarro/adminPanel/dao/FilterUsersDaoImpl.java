@@ -7,6 +7,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,12 +22,20 @@ public class FilterUsersDaoImpl implements FilterUsersDao {
 	private Configuration con;
 	private SessionFactory sessionFactory;
 
+	final static Logger LOG = Logger.getLogger(FilterUsersDaoImpl.class);
+
 	public FilterUsersDaoImpl() {
+		LOG.info("Configuring hibernate and building session factory. ");
+
 		con = new Configuration().configure();
 		sessionFactory = con.buildSessionFactory();
+
+		LOG.info("Configuration and building Succesfull");
 	}
 
 	public List<CustomerDetails> filterList(String filterName, String filterContact, String filterEMail) {
+
+		LOG.info("Inside the function to filter the details of the user.");
 
 		Session session = sessionFactory.openSession();
 

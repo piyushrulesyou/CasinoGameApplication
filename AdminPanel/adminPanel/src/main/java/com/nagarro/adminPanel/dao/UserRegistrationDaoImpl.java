@@ -1,5 +1,6 @@
 package com.nagarro.adminPanel.dao;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,18 +11,23 @@ import com.nagarro.adminPanel.model.CustomerDetails;
 @Repository
 public class UserRegistrationDaoImpl implements UserRegistrationDao {
 
-//	@Autowired
-//	SessionDao sessionDao;
+	final static Logger LOG = Logger.getLogger(UserRegistrationDaoImpl.class);
 
-	private Configuration configuration;
+	private Configuration con;
 	private SessionFactory sessionFactory;
 
 	public UserRegistrationDaoImpl() {
-		configuration = new Configuration().configure();
-		sessionFactory = configuration.buildSessionFactory();
+		LOG.info("Configuring hibernate and building session factory. ");
+
+		con = new Configuration().configure();
+		sessionFactory = con.buildSessionFactory();
+
+		LOG.info("Configuration and building Succesfull");
 	}
 
 	public String registerUserInDB(CustomerDetails userInformation) {
+
+		LOG.info("Inside method for registering the user in the DB");
 
 		String newCustomerID;
 
