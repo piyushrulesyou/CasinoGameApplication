@@ -5,8 +5,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nagarro.RouletteAPI.dto.BlockAmountDTO;
@@ -14,10 +16,9 @@ import com.nagarro.RouletteAPI.dto.GameResultDTO;
 import com.nagarro.RouletteAPI.services.BlockAmountServices;
 import com.nagarro.RouletteAPI.services.GamePlayingServices;
 import com.nagarro.RouletteAPI.services.UpdateUserAccountInDBServices;
-import com.nagarro.RouletteAPI.utilities.SegmentToNumberChosenRoulette;
 
 @Path("play")
-//@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class GamePlayingController {
 
@@ -33,7 +34,7 @@ public class GamePlayingController {
 	@GET
 	@Path("playGame/{customerID}/{blockAmount}/{segmentChosen}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public GameResultDTO blockUserAmount(@PathParam("customerID") String customerID,
+	public Response blockUserAmount(@PathParam("customerID") String customerID,
 			@PathParam("blockAmount") double blockAmount, @PathParam("segmentChosen") int segmentChosen) {
 
 		GameResultDTO gameResultDTO = null;
@@ -42,8 +43,6 @@ public class GamePlayingController {
 
 		if (isEligibleCustomer.getIsValidGame()) {
 
-//			int numberChosen = SegmentToNumberChosenRoulette.convertSegmentToNumber(segmentChosen);
-			
 			gameResultDTO = gamePlayingServices.calculateGameResult(blockAmount, segmentChosen);
 
 			double finalUserAccountBalance = updateUserAccountInDBServices.updateUserInfoInDB(customerID,
@@ -51,10 +50,14 @@ public class GamePlayingController {
 
 			gameResultDTO.setFinalUserAccountBalance(finalUserAccountBalance);
 
-			return gameResultDTO;
+			return Response.status(200).header("Access-Control-Allow-Origin", "*")
+					.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+					.header("Access-Control-Allow-Credentials", "true")
+					.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+					.header("Access-Control-Max-Age", "1209600").entity(gameResultDTO).build();
 
 		} else {
-			return gameResultDTO;
+			return null;
 		}
 
 	}

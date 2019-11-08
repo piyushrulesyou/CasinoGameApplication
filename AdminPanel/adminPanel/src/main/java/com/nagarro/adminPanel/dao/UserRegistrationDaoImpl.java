@@ -1,12 +1,9 @@
 package com.nagarro.adminPanel.dao;
 
-import java.sql.Blob;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.nagarro.adminPanel.model.CustomerDetails;
 

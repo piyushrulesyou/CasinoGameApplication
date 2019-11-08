@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { PlayingService } from '../../services/playing.service';
 import { Router } from '@angular/router';
 
-
-import { UserBettingValue } from 'src/app/model/betting.model';
-import { GameResult } from '../../model/game_result.model';
 
 @Component({
   selector: 'app-play',
@@ -43,6 +39,8 @@ export class PlayComponent {
   customerName: string = window.localStorage.getItem('loginUserName');
   accountBalance: number = parseFloat(window.localStorage.getItem('loginUserAccountBalance'));
 
+  // gameResult: any;
+
   callMe(event: MouseEvent) {
 
     console.log(
@@ -65,12 +63,6 @@ export class PlayComponent {
       this.insufficientBalError = "Insufficient Balance!"
     }
 
-    console.log(temp + "temp");
-
-
-    //   console.log(this.amount);
-    //   console.log(this.betSegment);
-
   }
 
   onSubmit() {
@@ -83,7 +75,7 @@ export class PlayComponent {
 
     if (gameCase != -1) {
       this.generateResult();
-      this.router.navigate(["result"]);
+      // this.router.navigate(["result"]);
     }
     else {
       this.zeroSelectedError = "Please select atleast one category for playing."

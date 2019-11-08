@@ -2,6 +2,8 @@ package com.nagarro.adminPanel.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.nagarro.adminPanel.config.AppConfig;
+
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override

@@ -1,10 +1,7 @@
 package com.nagarro.adminPanel.services;
 
-import java.sql.Blob;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.nagarro.adminPanel.dao.UserRegistrationDao;
 import com.nagarro.adminPanel.model.CustomerDetails;

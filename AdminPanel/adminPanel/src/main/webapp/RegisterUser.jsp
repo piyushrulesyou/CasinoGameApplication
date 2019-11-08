@@ -1,8 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page contentType="text/html;charset = UTF-8" language="java"%>
-<%@page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.*"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +34,8 @@
 		<div class="alert alert-danger">${statusMessage}</div>
 	</c:if>
 
-	<form:form action="registerUser" method="post">
+	<form:form action="registerUser" modelAttribute="customerDetails"
+		method="post">
 		<div class="form-group">
 			<table class="table">
 
@@ -40,11 +43,11 @@
 					<!-- 					<td>Name:</td> -->
 					<!-- 					<td><input type="text" id="customerName" name="customerName" -->
 					<!-- 						placeholder="Enter name" value="sdfhs" required="required"></td> -->
-
-					<td><form:label path="customerName">Name: </form:label></td>
-					<td><form:input type="text" path="customerName"
-							required="required" /></td>
-
+					<spring:bind path="customerName">
+						<td><form:label path="customerName">Name: </form:label></td>
+						<td><form:input type="text" path="customerName"
+								required="required" /></td>
+					</spring:bind>
 				</tr>
 
 
@@ -52,11 +55,11 @@
 					<!-- 					<td>Date of Birth:</td> -->
 					<!-- 					<td><input type="date" name="dateOfBirth" id="dateOfBirth" -->
 					<!-- 						placeholder="Enter DOB" required="required"></td> -->
-
-					<td><form:label path="dateOfBirth">Date of Birth: </form:label></td>
-					<td><form:input type="date" path="dateOfBirth"
-							required="required" /></td>
-
+					<spring:bind path="dateOfBirth">
+						<td><form:label path="dateOfBirth">Date of Birth: </form:label></td>
+						<td><form:input type="date" path="dateOfBirth"
+								required="required" /></td>
+					</spring:bind>
 				</tr>
 
 				<tr>
@@ -64,9 +67,11 @@
 					<!-- 					<td><input type="number" name="contactNumber" -->
 					<!-- 						id="contactNumber" placeholder="Enter Contact Number" value=897899 -->
 					<!-- 						required="required"></td> -->
-					<td><form:label path="contactNumber">Contact: </form:label></td>
-					<td><form:input type="number" path="contactNumber"
-							required="required" /></td>
+					<spring:bind path="contactNumber">
+						<td><form:label path="contactNumber">Contact: </form:label></td>
+						<td><form:input type="number" path="contactNumber"
+								required="required" /></td>
+					</spring:bind>
 				</tr>
 
 				<tr>
@@ -74,9 +79,11 @@
 					<!-- 					<td><input type="email" id="emailID" name="emailID" -->
 					<!-- 						placeholder="Enter email" value="sdfhs@gmail.com" -->
 					<!-- 						required="required"></td> -->
-					<td><form:label path="emailID">Email ID: </form:label></td>
-					<td><form:input type="email" path="emailID"
-							required="required" /></td>
+					<spring:bind path="emailID">
+						<td><form:label path="emailID">Email ID: </form:label></td>
+						<td><form:input type="email" path="emailID"
+								required="required" /></td>
+					</spring:bind>
 				</tr>
 
 

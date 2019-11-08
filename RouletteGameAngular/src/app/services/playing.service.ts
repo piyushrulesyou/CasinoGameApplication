@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { UserBettingValue } from '../model/betting.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/index';
 import { GameResult } from '../model/game_result.model';

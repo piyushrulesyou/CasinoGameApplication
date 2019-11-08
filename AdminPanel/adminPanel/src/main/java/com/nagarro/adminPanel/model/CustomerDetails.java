@@ -1,10 +1,10 @@
 package com.nagarro.adminPanel.model;
 
-import java.sql.Blob;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+//import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "customerDetails")
@@ -18,7 +18,8 @@ public class CustomerDetails {
 	private String contactNumber;
 	private String emailID;
 //	private Blob idProof;
-//
+
+//	@JsonIgnore
 //	public Blob getIdProof() {
 //		return idProof;
 //	}
