@@ -8,6 +8,11 @@
     height: 255px;
 }
 
+.result_disp{
+    background-color: #008CBA;
+    width: 250px;
+}
+
 
 .glow{
     font-size: 50px;
