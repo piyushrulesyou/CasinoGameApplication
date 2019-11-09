@@ -53,6 +53,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 **About Us Screen**
 ![about_us-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(2).png
 
+**Admin Home Screen**
+![home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(2).png)
+
 **Game Playing Screen**
 ![play-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(4).png
 
