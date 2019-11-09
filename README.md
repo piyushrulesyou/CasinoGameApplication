@@ -15,13 +15,24 @@ This project contains total 3 applications:
 **VIEWS**
 
 **Home Screen**
-![Home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(2).png)
+![home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(2).png)
 
 **Registration Page**
-![Home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(3).png)
+![registration-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(3).png)
 
 **Successful Registration Page**
-![Home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(4).png)
+![success-registration-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(4).png)
 
 **User List Page**
-![Home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(1).png)
+![user-list-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/AdminPanel/adminPanel/Screenshots/casino_admin%20(1).png)
+
+
+# Admin API
+- Validate User API
+- Game Playing API
+
+**Validate User API**
+This request is made by the Roulette Game to validate the user playing the Game using URL: /validate/validateUser/customerID .
+
+**Game Playing API**
+This request is made by the Roulette Game to calculate the result of the Game using URL: /play/playGame/customerID/blockedAmount/numberChosen .
