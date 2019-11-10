@@ -45,25 +45,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 **VIEWS**
 
 **Login Screen**
-![login-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(1).png
+![login-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(1).png)
 
 **Home Screen**
-![home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(3).png
+![home-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(3).png)
 
 **About Us Screen**
-![about_us-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(2).png
+![about_us-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(2).png)
 
 **Game Playing Screen**
-![play-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(4).png
+![play-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(4).png)
 
 **Result Screen**
-![result-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(5).png
+![result-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(5).png)
 
 **Game Won**
-![won-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(6).png
+![won-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(6).png)
 
 **Game Lost**
-![lost-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(7).png
+![lost-screen](https://raw.githubusercontent.com/piyushrulesyou/Casino-Game-Application/master/RouletteGameAngular/Screenshots/casino_angular_ss%20(7).png)
 
 ## Development server
 
