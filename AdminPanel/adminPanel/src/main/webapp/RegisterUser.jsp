@@ -39,7 +39,7 @@
 	</c:if>
 
 	<form:form action="registerUser" modelAttribute="customerDetails"
-		method="post">
+		method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<table class="table">
 
@@ -79,7 +79,7 @@
 
 				<tr>
 					<td>Identity Proof:</td>
-					<td><input type="file" id="idProof" name="idProof"
+					<td><input type="file" id="idProofImage" name="idProofImage"
 						accept="image/*" placeholder="ID Proof"></td>
 				</tr>
 

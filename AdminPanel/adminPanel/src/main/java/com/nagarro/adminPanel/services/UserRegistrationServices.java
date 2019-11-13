@@ -1,5 +1,7 @@
 package com.nagarro.adminPanel.services;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 import com.nagarro.adminPanel.model.CustomerDetails;
 
 public interface UserRegistrationServices {
@@ -11,6 +13,6 @@ public interface UserRegistrationServices {
 	 * @param userInformation
 	 * @return
 	 */
-	public String registerUser(CustomerDetails userInformation);
+	public String registerUser(CustomerDetails userInformation, CommonsMultipartFile idProofImage);
 
 }

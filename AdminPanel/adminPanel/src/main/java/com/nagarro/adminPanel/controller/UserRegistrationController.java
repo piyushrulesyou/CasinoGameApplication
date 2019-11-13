@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nagarro.adminPanel.model.CustomerDetails;
@@ -66,7 +68,8 @@ public class UserRegistrationController {
 	 */
 	@RequestMapping(value = "registerUser", method = RequestMethod.POST)
 	public ModelAndView registerNewUser(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("customerDetails") CustomerDetails userInformation) throws Exception {
+			@ModelAttribute("customerDetails") CustomerDetails userInformation,
+			@RequestParam("idProofImage") CommonsMultipartFile idProofImage) throws Exception {
 
 		LOG.info("Inside controller for registering user.");
 
@@ -108,7 +111,7 @@ public class UserRegistrationController {
 		 * This variable is used to check whether the customer registration was
 		 * successful or not.
 		 */
-		newCustomerID = userRegistrationServices.registerUser(userInformation);
+		newCustomerID = userRegistrationServices.registerUser(userInformation, idProofImage);
 
 		if (newCustomerID == null) {
 
